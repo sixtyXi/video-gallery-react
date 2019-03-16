@@ -2,7 +2,9 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
+module.exports = merge.smartStrategy({
+  'module.rules': 'prepend'
+})(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
@@ -13,10 +15,15 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+        test: /\.css$/,
+        use: [ 'style-loader' ]
       }
     ]
   },
-  plugins: [ new webpack.HotModuleReplacementPlugin() ]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development'
+    })
+  ]
 });

@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -15,6 +14,18 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]--[hash:base64:5]'
+            }
+          }
+        ]
+      },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
@@ -54,9 +65,6 @@ module.exports = {
       title: 'React Video Gallery',
       hash: true,
       template: 'index.html'
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ]
 };
