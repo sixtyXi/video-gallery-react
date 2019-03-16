@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { HelloFunc } from './components/HelloFunc/HelloFunc';
 import { HelloCreate } from './components/HelloCreate/HelloCreate';
