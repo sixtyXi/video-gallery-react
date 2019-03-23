@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { HelloFunc } from './components/HelloFunc/HelloFunc';
 import { HelloCreate } from './components/HelloCreate/HelloCreate';
 import { HelloPure } from './components/HelloPure/HelloPure';
 import { HelloComponent } from './components/HelloComponent/HelloComponent';
 
+import 'normalize.css';
+import './App.css';
+
 const App = () => {
   return (
-    <main>
+    <Fragment>
       {HelloCreate}
       <HelloFunc />
       <HelloPure />
       <HelloComponent />
-    </main>
+    </Fragment>
   );
 };
 

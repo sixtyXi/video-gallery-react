@@ -1,3 +1,5 @@
 import React from 'react';
 
-export const HelloFunc = () => <p>Component Function</p>;
+import styles from './HelloFunc.css';
+
+export const HelloFunc = () => <p className={styles.paragraph}>Component Function</p>;

@@ -1,3 +1,9 @@
 import React from 'react';
 
-export const HelloCreate = React.createElement('p', null, 'React.createElement');
+import styles from './HelloCreate.css';
+
+export const HelloCreate = React.createElement(
+  'p',
+  { className: styles.paragraph },
+  'React.createElement'
+);
