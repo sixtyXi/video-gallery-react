@@ -1,4 +1,0 @@
-.paragraph {
-  composes: paragraph from '../../shared/paragraph.css';
-  background: burlywood;
-}

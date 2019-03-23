@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './HelloComponent.css';
+import styles from './HelloComponent.scss';
 
 export class HelloComponent extends Component {
   render() {

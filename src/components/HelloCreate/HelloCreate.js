@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './HelloCreate.css';
+import styles from './HelloCreate.scss';
 
 export const HelloCreate = React.createElement(
   'p',

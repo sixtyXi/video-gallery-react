@@ -11,7 +11,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -20,7 +20,8 @@ module.exports = merge(common, {
               modules: true,
               localIdentName: '[name]__[local]--[hash:base64:5]'
             }
-          }
+          },
+          'sass-loader'
         ]
       }
     ]
@@ -28,9 +29,9 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        sourceMap: true,
-      }),
-    ],
+        sourceMap: true
+      })
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({

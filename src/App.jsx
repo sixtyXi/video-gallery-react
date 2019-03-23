@@ -6,7 +6,7 @@ import { HelloPure } from './components/HelloPure/HelloPure';
 import { HelloComponent } from './components/HelloComponent/HelloComponent';
 
 import 'normalize.css';
-import './App.css';
+import './App.scss';
 
 const App = () => {
   return (

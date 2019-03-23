@@ -1,0 +1,4 @@
+.paragraph {
+  composes: paragraph from '../../shared/paragraph.scss';
+  background: burlywood;
+}
