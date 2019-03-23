@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
+module.exports = merge.strategy({ 'module.rules': 'prepend' })(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
@@ -14,17 +14,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]--[hash:base64:5]'
-            }
-          },
-          'sass-loader'
-        ]
+        use: [ 'style-loader' ]
       }
     ]
   },
