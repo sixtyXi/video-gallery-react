@@ -1,0 +1,17 @@
+@import '../../../shared/_colors.scss';
+@import '../../../shared/_typography.scss';
+
+.searchWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+  color: $text-light;
+  font-variant: all-small-caps;
+}
+
+.pageTitle {
+  padding: 0;
+  text-transform: uppercase;
+  font-size: $size-l;
+}
