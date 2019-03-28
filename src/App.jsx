@@ -1,21 +1,16 @@
-import React, { Fragment } from 'react';
-
-import { HelloFunc } from './components/HelloFunc/HelloFunc';
-import { HelloCreate } from './components/HelloCreate/HelloCreate';
-import { HelloPure } from './components/HelloPure/HelloPure';
-import { HelloComponent } from './components/HelloComponent/HelloComponent';
-
+import React from 'react';
 import 'normalize.css';
+
 import './App.scss';
+import { ErrorBondary } from './components/ErrorBoundary/ErrorBoundary';
+//import { MoviePage } from './movie/MoviePage/MoviePage';
+import { ListMoviePage } from './list-movie/ListMoviePage/ListMoviePage';
 
 const App = () => {
   return (
-    <Fragment>
-      {HelloCreate}
-      <HelloFunc />
-      <HelloPure />
-      <HelloComponent />
-    </Fragment>
+    <ErrorBondary>
+      <ListMoviePage />
+    </ErrorBondary>
   );
 };
 
