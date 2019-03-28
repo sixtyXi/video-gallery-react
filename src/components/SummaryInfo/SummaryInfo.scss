@@ -1,0 +1,16 @@
+@import '../../shared/_typography.scss';
+
+.summaryWrapper {
+  width: 100%;
+  padding: 5px 0;
+  background: lightgray;
+  font-weight: bold;
+  font-size: $size-s;
+
+  & > section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    white-space: nowrap;
+  }
+}
