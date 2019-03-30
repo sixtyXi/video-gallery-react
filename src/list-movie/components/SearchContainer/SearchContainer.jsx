@@ -32,7 +32,7 @@ export class SearchContainer extends Component {
           handleChange={this.handleChange}
           title="Search by"
           filters={FILTERS}
-          className="btn"
+          type="btn"
           activeFilterName={searchBy}
         />
 

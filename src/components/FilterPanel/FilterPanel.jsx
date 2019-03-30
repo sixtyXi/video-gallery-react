@@ -3,14 +3,7 @@ import React from 'react';
 import styles from './FilterPanel.scss';
 import { FilterItem } from './FilterItem/FilterItem';
 
-export const FilterPanel = ({
-  filters,
-  activeFilterName,
-  name,
-  handleChange,
-  className,
-  title
-}) => {
+export const FilterPanel = ({ filters, activeFilterName, name, handleChange, type, title }) => {
   const filterItems = filters.map(filterName => {
     const isChecked = activeFilterName === filterName;
 
@@ -20,7 +13,7 @@ export const FilterPanel = ({
         name={name}
         handleChange={handleChange}
         filterName={filterName}
-        className={className}
+        type={type}
         checked={isChecked}
       />
     );

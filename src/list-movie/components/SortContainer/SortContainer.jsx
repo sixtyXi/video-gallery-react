@@ -23,7 +23,7 @@ export class SortContainer extends Component {
         handleChange={this.handleChange}
         title="Sort by"
         filters={FILTERS}
-        className="label"
+        type="label"
         activeFilterName={sortValue}
       />
     );
