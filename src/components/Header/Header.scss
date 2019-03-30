@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://assets.nflxext.com/ffe/siteui/vlv3/783e3b0f-b68e-440e-a980-0e1c19cbe76c/db91ff16-899e-451c-b89f-60a28f4ae7b5/RU-en-20190318-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+  background-size: contain;
+
+  & > section {
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

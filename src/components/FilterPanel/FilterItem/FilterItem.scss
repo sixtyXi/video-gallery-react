@@ -1,0 +1,28 @@
+@import '../../../shared/_colors.scss';
+@import '../../../shared/_typography.scss';
+
+.filterInput {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+.btn {
+  margin-left: 10px;
+  padding: 0 5px;
+  background: $secondary;
+
+  .filterInput:checked + & {
+    background: $accent;
+  }
+}
+
+.label {
+  margin-left: 15px;
+
+  .filterInput:checked + & {
+    color: $accent;
+  }
+}

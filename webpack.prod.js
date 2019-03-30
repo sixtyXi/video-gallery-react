@@ -5,32 +5,23 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
+module.exports = merge.strategy({ 'module.rules': 'prepend' })(common, {
   mode: 'production',
   devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]--[hash:base64:5]'
-            }
-          }
-        ]
+        test: /\.(sa|sc|c)ss$/,
+        use: [ MiniCssExtractPlugin.loader ]
       }
     ]
   },
   optimization: {
     minimizer: [
       new TerserPlugin({
-        sourceMap: true,
-      }),
-    ],
+        sourceMap: true
+      })
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({

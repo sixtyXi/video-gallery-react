@@ -1,0 +1,52 @@
+@import '../../../shared/_colors.scss';
+@import '../../../shared/_typography.scss';
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  color: $text-light;
+}
+
+.poster {
+  width: 200px;
+  height: 280px;
+}
+
+.descWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 40px;
+  font-size: $size-s;
+  line-height: 1.5;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.title {
+  line-height: 1;
+  color: $accent;
+  position: relative;
+
+  &:after {
+    content: attr(data-rate);
+    position: absolute;
+    padding: 4px 2px;
+    margin-left: 20px;
+    font-size: $size-s;
+    line-height: 1.16;
+    color: $text-light;
+    border: 1px solid;
+    border-radius: 50%;
+  }
+}
+
+.releaseDate,
+.runtime {
+  width: auto;
+  margin-right: 20px;
+  font-weight: bold;
+}
