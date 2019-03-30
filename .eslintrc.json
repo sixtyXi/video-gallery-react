@@ -1,7 +1,7 @@
 {
-  "extends": ["airbnb", "prettier", "plugin:prettier/recommended"],
+  "extends": ["airbnb", "prettier", "plugin:prettier/recommended", "plugin:jest/recommended"],
   "parser": "babel-eslint",
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "jest"],
   "rules": {
     "prettier/prettier": ["error"],
     "jsx-a11y/href-no-hash": [0],
