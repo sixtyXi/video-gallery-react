@@ -2,20 +2,20 @@ import React, { Fragment } from 'react';
 
 import styles from './FilterItem.scss';
 
-export const FilterItem = (props) => {
+export const FilterItem = ({ name, handleChange, filterName, checked, className }) => {
   return (
     <Fragment>
       <input
         className={styles.filterInput}
         type="radio"
-        name={props.name}
-        onChange={props.handleChange}
-        id={props.filterName}
-        value={props.filterName}
-        checked={props.checked}
+        name={name}
+        onChange={handleChange}
+        id={filterName}
+        value={filterName}
+        checked={checked}
       />
-      <label className={styles[props.styleName]} htmlFor={props.filterName}>
-        {props.filterName}
+      <label className={styles[className]} htmlFor={filterName}>
+        {filterName}
       </label>
     </Fragment>
   );

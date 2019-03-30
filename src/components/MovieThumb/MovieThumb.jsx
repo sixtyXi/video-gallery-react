@@ -2,8 +2,11 @@ import React from 'react';
 
 import styles from './MovieThumb.scss';
 
-export const MovieThumb = (props) => {
-  const movie = props.movie;
+const mapGenres = genres => {
+  return genres.map(genre => genre.replace(/^./, genre[0].toUpperCase())).join(' & ');
+};
+
+export const MovieThumb = ({ movie }) => {
   const genres = mapGenres(movie.genres);
 
   return (
@@ -16,8 +19,4 @@ export const MovieThumb = (props) => {
       <p className={styles.genre}>{genres}</p>
     </article>
   );
-};
-
-const mapGenres = (genres) => {
-  return genres.map((genre) => genre.replace(/^./, genre[0].toUpperCase())).join(' & ');
 };

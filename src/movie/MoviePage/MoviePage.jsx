@@ -18,7 +18,7 @@ export const MoviePage = () => {
       <Header>
         <ContentWrapper>
           <Logo />
-          <SearchBtn styleName="searchBtnSecondary" />
+          <SearchBtn className="searchBtnSecondary" />
           <MovieCard movie={MOVIES[1]} />
         </ContentWrapper>
       </Header>
