@@ -4,5 +4,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.(sa|sc|c)ss$': 'identity-obj-proxy'
   },
-  snapshotSerializers: ['enzyme-to-json/serializer']
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  collectCoverageFrom: ['**/src/**/*.{js,jsx}']
 };
