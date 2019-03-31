@@ -4,6 +4,7 @@
 
 - Development `npm start`
 - Production `npm run build`
-- Testing `npm test`
+- Unit testing `npm test`
 - Coverage `npm run test:coverage`
+- E2E testing `npm run e2e`
 - Blank express server `npm run server`

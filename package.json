@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "server": "node server/server.js",
-    "e2e": "cypress open"
+    "e2e": "concurrently \"npm start\" \"cypress open\""
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "babel-jest": "^24.3.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.0",
+    "concurrently": "^4.1.0",
     "css-loader": "^2.1.1",
     "cypress": "^3.2.0",
     "enzyme": "^3.9.0",
