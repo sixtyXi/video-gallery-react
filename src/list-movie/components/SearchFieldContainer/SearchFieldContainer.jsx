@@ -16,7 +16,13 @@ export class SearchFieldContainer extends Component {
 
     return (
       <div className={styles.searchField}>
-        <input type="text" value={searchTxt} id="search" onChange={e => this.handleChange(e)} />
+        <input
+          data-cy="searchField"
+          type="text"
+          value={searchTxt}
+          id="search"
+          onChange={e => this.handleChange(e)}
+        />
       </div>
     );
   }
