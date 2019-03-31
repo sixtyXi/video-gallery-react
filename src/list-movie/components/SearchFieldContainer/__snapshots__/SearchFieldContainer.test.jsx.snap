@@ -5,6 +5,7 @@ exports[`SearchFieldContainer renders correctly 1`] = `
   className="searchField"
 >
   <input
+    data-cy="searchField"
     id="search"
     onChange={[Function]}
     type="text"
