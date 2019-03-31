@@ -5,7 +5,14 @@ import styles from './FilterItem.scss';
 
 const cx = classNames.bind(styles);
 
-export const FilterItem = ({ name, handleChange, filterName, checked, type }) => {
+export const FilterItem = ({
+  name,
+  handleChange,
+  filterValue,
+  filterTitle,
+  checked,
+  type = 'btn'
+}) => {
   const className = cx({
     btn: type === 'btn',
     label: type === 'label'
@@ -18,12 +25,12 @@ export const FilterItem = ({ name, handleChange, filterName, checked, type }) =>
         type="radio"
         name={name}
         onChange={handleChange}
-        id={filterName}
-        value={filterName}
+        id={filterValue}
+        value={filterValue}
         checked={checked}
       />
-      <label className={className} htmlFor={filterName}>
-        {filterName}
+      <label className={className} htmlFor={filterValue}>
+        {filterTitle}
       </label>
     </Fragment>
   );
