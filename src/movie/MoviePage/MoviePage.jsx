@@ -22,12 +22,14 @@ export const MoviePage = () => {
           <MovieCard movie={MOVIES[1]} />
         </ContentWrapper>
       </Header>
-      <SummaryInfo>
-        <div>{RESULT_INFO}</div>
-      </SummaryInfo>
-      <ContentWrapper>
-        <MovieList movies={MOVIES} />
-      </ContentWrapper>
+      <main>
+        <SummaryInfo>
+          <div>{RESULT_INFO}</div>
+        </SummaryInfo>
+        <ContentWrapper>
+          <MovieList movies={MOVIES} />
+        </ContentWrapper>
+      </main>
       <Footer />
     </Fragment>
   );

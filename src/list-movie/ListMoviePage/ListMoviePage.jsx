@@ -22,13 +22,15 @@ export const ListMoviePage = () => {
           <SearchWrapper />
         </ContentWrapper>
       </Header>
-      <SummaryInfo>
-        <div>{RESULT_INFO}</div>
-        <SortContainer title="Sort by" type="label" filters={SORT_FILTERS} />
-      </SummaryInfo>
-      <ContentWrapper>
-        <MovieList movies={MOVIES} />
-      </ContentWrapper>
+      <main>
+        <SummaryInfo>
+          <div>{RESULT_INFO}</div>
+          <SortContainer title="Sort by" type="label" filters={SORT_FILTERS} />
+        </SummaryInfo>
+        <ContentWrapper>
+          <MovieList movies={MOVIES} />
+        </ContentWrapper>
+      </main>
       <Footer />
     </Fragment>
   );
