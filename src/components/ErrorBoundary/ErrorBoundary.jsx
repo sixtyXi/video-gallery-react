@@ -15,7 +15,7 @@ export class ErrorBondary extends Component {
 
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
-    this.logError(error, info);
+    ErrorBondary.logError(error, info);
   }
 
   render() {

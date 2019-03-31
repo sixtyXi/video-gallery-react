@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterPanel not renders if filters are empty 1`] = `""`;
+
+exports[`FilterPanel renders correctly 1`] = `
+<div
+  className="filterWrapper"
+>
+  <p
+    className="filterTitle"
+  >
+    Sort by
+  </p>
+  <FilterItem
+    checked={false}
+    filterTitle="release date"
+    filterValue="release_date"
+    key="release_date"
+  />
+  <FilterItem
+    checked={false}
+    filterTitle="rating"
+    filterValue="vote_average"
+    key="vote_average"
+  />
+</div>
+`;

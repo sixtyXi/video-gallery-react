@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchWrapper renders correctly 1`] = `
+<form
+  className="searchWrapper"
+>
+  <h1
+    className="pageTitle"
+  >
+    Find your movie
+  </h1>
+  <SearchFieldContainer />
+  <SortContainer
+    filters={
+      Array [
+        Object {
+          "title": "title",
+          "value": "title",
+        },
+        Object {
+          "title": "genre",
+          "value": "genre",
+        },
+      ]
+    }
+  />
+  <SearchBtn
+    className="searchBtnPrimary"
+  />
+</form>
+`;
