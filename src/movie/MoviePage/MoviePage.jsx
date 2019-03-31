@@ -7,7 +7,7 @@ import { Logo } from '../../components/Logo/Logo';
 import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
 import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
 import { SummaryInfo } from '../../components/SummaryInfo/SummaryInfo';
-import { MOVIES } from '../../shared/mock';
+import { MOVIES } from '../../shared/moviesMock';
 import { MovieCard } from '../components/MovieCard/MovieCard';
 
 const RESULT_INFO = 'Films by Drama genre';
