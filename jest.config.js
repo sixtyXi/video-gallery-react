@@ -5,5 +5,6 @@ module.exports = {
     '\\.(sa|sc|c)ss$': 'identity-obj-proxy'
   },
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  collectCoverageFrom: ['**/src/**/*.{js,jsx}']
+  collectCoverageFrom: ['**/src/**/*.{js,jsx}'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/cypress/']
 };
