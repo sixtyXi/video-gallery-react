@@ -7,7 +7,7 @@ export class SearchFieldContainer extends Component {
     searchTxt: ''
   };
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ searchTxt: event.target.value });
   }
 
@@ -21,7 +21,7 @@ export class SearchFieldContainer extends Component {
           type="text"
           value={searchTxt}
           id="search"
-          onChange={e => this.handleChange(e)}
+          onChange={this.handleChange}
         />
       </div>
     );

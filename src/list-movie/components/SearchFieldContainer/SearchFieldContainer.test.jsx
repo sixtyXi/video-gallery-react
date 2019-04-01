@@ -1,26 +1,31 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import { SearchFieldContainer } from './SearchFieldContainer';
 
 describe('SearchFieldContainer', () => {
-  test('renders correctly', () => {
-    const wrapper = shallow(<SearchFieldContainer />);
+  let wrapper;
 
+  beforeEach(() => {
+    wrapper = shallow(<SearchFieldContainer />);
+  })
+
+  test('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('calls *handleChange* on input value changes', () => {
-    const wrapper = mount(<SearchFieldContainer />);
+  test('calls handleChange on input value changes', () => {
     const spy = jest.spyOn(wrapper.instance(), 'handleChange');
+    wrapper.update();
+    wrapper.instance().forceUpdate();
+
     const input = wrapper.find('input');
 
-    input.simulate('change');
+    input.simulate('change', { target: { value: 'New text' } });
     expect(spy).toHaveBeenCalled();
   });
 
   test('sets new input value to state', () => {
-    const wrapper = mount(<SearchFieldContainer />);
     const input = wrapper.find('input');
 
     input.simulate('change', { target: { value: 'New text' } });

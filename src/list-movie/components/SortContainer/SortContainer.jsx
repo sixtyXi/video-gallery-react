@@ -19,7 +19,7 @@ export class SortContainer extends Component {
     };
   }
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({ filterValue: event.target.value });
   }
 
@@ -29,7 +29,7 @@ export class SortContainer extends Component {
     return (
       <FilterPanel
         name="filterValue"
-        handleChange={e => this.handleChange(e)}
+        handleChange={this.handleChange}
         title={this.panelTitle}
         filters={this.filters}
         type={this.panelType}
