@@ -3,6 +3,7 @@
 exports[`MovieThumb renders correctly 1`] = `
 <article
   className="wrapper"
+  data-cy="movieThumb"
 >
   <img
     alt="Poster of Kill Bill: Vol. 1"

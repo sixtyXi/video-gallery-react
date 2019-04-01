@@ -3,6 +3,7 @@
 exports[`Logo renders correctly 1`] = `
 <div
   className="logo"
+  data-cy="logo"
 >
   netflixroulette
 </div>

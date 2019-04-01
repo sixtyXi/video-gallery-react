@@ -12,7 +12,7 @@ export const MovieThumb = ({ movie }) => {
   const { genres = [], poster_path: posterPath, title, release_date: releaseDate } = movie;
 
   return (
-    <article className={styles.wrapper}>
+    <article data-cy="movieThumb" className={styles.wrapper}>
       <img className={styles.poster} src={posterPath} alt={`Poster of ${title}`} />
       <div className={styles.titleWrapper}>
         <h2 className={styles.title}>{title}</h2>
