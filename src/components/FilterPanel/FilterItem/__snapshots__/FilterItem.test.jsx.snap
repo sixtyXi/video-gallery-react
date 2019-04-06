@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterItem renders correctly 1`] = `
+<Fragment>
+  <input
+    className="filterInput"
+    type="radio"
+  />
+  <label
+    className="btn"
+  />
+</Fragment>
+`;

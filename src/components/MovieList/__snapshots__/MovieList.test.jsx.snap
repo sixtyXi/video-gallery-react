@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieList renders *No results found* 1`] = `
+<p>
+  No results found
+</p>
+`;
+
+exports[`MovieList renders correctly 1`] = `
+<div
+  className="listWrapper"
+>
+  <MovieThumb
+    key="1"
+    movie={
+      Object {
+        "id": 1,
+      }
+    }
+  />
+  <MovieThumb
+    key="2"
+    movie={
+      Object {
+        "id": 2,
+      }
+    }
+  />
+</div>
+`;

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 export class ErrorBondary extends Component {
+  static logError(error, info) {
+    console.warn(error);
+    console.warn(info);
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -10,19 +15,17 @@ export class ErrorBondary extends Component {
 
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
-    this.logError(error, info);
-  }
-
-  logError(error, info) {
-    console.log(error);
-    console.table(info);
+    ErrorBondary.logError(error, info);
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state;
+    const { children } = this.props;
+
+    if (hasError) {
       return <h1>Something went wrong</h1>;
     }
 
-    return this.props.children;
+    return children;
   }
 }

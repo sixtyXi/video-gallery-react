@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchFieldContainer renders correctly 1`] = `
+<div
+  className="searchField"
+>
+  <input
+    data-cy="searchField"
+    id="search"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</div>
+`;

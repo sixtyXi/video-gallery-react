@@ -2,9 +2,7 @@ import React from 'react';
 
 import styles from './MovieCard.scss';
 
-export const MovieCard = (props) => {
-  const movie = props.movie;
-
+export const MovieCard = ({ movie }) => {
   return (
     <article className={styles.wrapper}>
       <img className={styles.poster} src={movie.poster_path} alt={`Poster of ${movie.title}`} />

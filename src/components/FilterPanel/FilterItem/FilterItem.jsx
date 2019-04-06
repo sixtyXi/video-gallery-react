@@ -1,21 +1,36 @@
 import React, { Fragment } from 'react';
+import classNames from 'classnames/bind';
 
 import styles from './FilterItem.scss';
 
-export const FilterItem = (props) => {
+const cx = classNames.bind(styles);
+
+export const FilterItem = ({
+  name,
+  handleChange,
+  filterValue,
+  filterTitle,
+  checked,
+  type = 'btn'
+}) => {
+  const className = cx({
+    btn: type === 'btn',
+    label: type === 'label'
+  });
+
   return (
     <Fragment>
       <input
         className={styles.filterInput}
         type="radio"
-        name={props.name}
-        onChange={props.handleChange}
-        id={props.filterName}
-        value={props.filterName}
-        checked={props.checked}
+        name={name}
+        onChange={handleChange}
+        id={filterValue}
+        value={filterValue}
+        checked={checked}
       />
-      <label className={styles[props.styleName]} htmlFor={props.filterName}>
-        {props.filterName}
+      <label className={className} htmlFor={filterValue}>
+        {filterTitle}
       </label>
     </Fragment>
   );

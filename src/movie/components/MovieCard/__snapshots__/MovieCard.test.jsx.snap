@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard renders correctly 1`] = `
+<article
+  className="wrapper"
+>
+  <img
+    alt="Poster of Four rooms"
+    className="poster"
+    src="https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg"
+  />
+  <div
+    className="descWrapper"
+  >
+    <h1
+      className="title"
+      data-rate={3}
+    >
+      Four rooms
+    </h1>
+    <p>
+      Oscar-winning Movies
+    </p>
+    <time
+      className="releaseDate"
+    >
+      1995
+    </time>
+    <p
+      className="runtime"
+    >
+      97 min
+    </p>
+    <p>
+      Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.
+    </p>
+  </div>
+</article>
+`;

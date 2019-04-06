@@ -3,24 +3,27 @@ import React from 'react';
 import styles from './FilterPanel.scss';
 import { FilterItem } from './FilterItem/FilterItem';
 
-export const FilterPanel = (props) => {
-  const filters = props.filters.map((filterName) => {
-    const isChecked = props.activeFilterName === filterName;
+export const FilterPanel = ({ filters = [], activeFilter, name, handleChange, type, title }) => {
+  const filterItems = filters.map(filter => {
+    const isChecked = activeFilter === filter.value;
+
     return (
       <FilterItem
-        key={filterName}
-        name={props.name}
-        handleChange={props.handleChange}
-        filterName={filterName}
-        styleName={props.styleName}
+        key={filter.value}
+        name={name}
+        handleChange={handleChange}
+        filterValue={filter.value}
+        filterTitle={filter.title}
+        type={type}
         checked={isChecked}
       />
     );
   });
-  return (
+
+  return filterItems.length ? (
     <div className={styles.filterWrapper}>
-      <p className={styles.filterTitle}>{props.title}</p>
-      {filters}
+      <p className={styles.filterTitle}>{title}</p>
+      {filterItems}
     </div>
-  );
+  ) : null;
 };

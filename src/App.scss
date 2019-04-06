@@ -4,7 +4,7 @@ html {
   box-sizing: border-box;
   font-size: $size-m;
   line-height: 1.4;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 *,
@@ -14,9 +14,17 @@ html {
 }
 
 html,
-body,
-#root {
+body {
   height: 100%;
+}
+
+:global(#root) {
+  position: relative;
+  min-height: 100%;
+}
+
+main {
+  padding-bottom: 40px;
 }
 
 h1,

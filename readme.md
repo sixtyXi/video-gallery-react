@@ -1,6 +1,10 @@
 # React Video Gallery Application
+
 ## Usage
-* Development `npm start`
-* Production `npm run build`
-* Testing `npm test`
-* Blank express server `npm run server`
+
+- Development `npm start`
+- Production `npm run build`
+- Unit testing `npm test`
+- Coverage `npm run test:coverage`
+- E2E testing `npm run e2e`
+- Blank express server `npm run server`

@@ -5,26 +5,35 @@ import { FilterPanel } from '../../../components/FilterPanel/FilterPanel';
 export class SortContainer extends Component {
   constructor(props) {
     super(props);
-    this.filters = [ 'release date', 'rating' ];
-    this.defaultFilter = this.filters[0];
+    this.filters = props.filters;
+
+    if (!this.filters.length) return;
+
+    this.defaultFilterIdx = props.defaultFilterIdx || 0;
+    this.panelTitle = props.title || 'Search by';
+    this.panelType = props.type || 'btn';
+
+    this.defaultFilter = this.filters[this.defaultFilterIdx];
     this.state = {
-      sortValue: this.defaultFilter
+      filterValue: this.defaultFilter.value
     };
   }
 
-  handleChange(event) {
-    this.setState({ sortValue: event.target.value });
+  handleChange = event => {
+    this.setState({ filterValue: event.target.value });
   }
 
   render() {
+    const { filterValue } = this.state;
+
     return (
       <FilterPanel
-        name="sortValue"
-        handleChange={this.handleChange.bind(this)}
-        title="Sort by"
+        name="filterValue"
+        handleChange={this.handleChange}
+        title={this.panelTitle}
         filters={this.filters}
-        styleName="label"
-        activeFilterName={this.state.sortValue}
+        type={this.panelType}
+        activeFilter={filterValue}
       />
     );
   }
