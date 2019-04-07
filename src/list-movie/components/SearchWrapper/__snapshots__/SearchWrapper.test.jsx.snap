@@ -11,6 +11,7 @@ exports[`SearchWrapper renders correctly 1`] = `
   </h1>
   <SearchFieldContainer />
   <SortContainer
+    defaultFilterIdx={0}
     filters={
       Array [
         Object {
@@ -23,6 +24,8 @@ exports[`SearchWrapper renders correctly 1`] = `
         },
       ]
     }
+    title="Sort by"
+    type="btn"
   />
   <SearchBtn
     className="searchBtnPrimary"

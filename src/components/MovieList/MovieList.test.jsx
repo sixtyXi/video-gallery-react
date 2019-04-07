@@ -3,9 +3,10 @@ import { shallow } from 'enzyme';
 
 import { MovieList } from './MovieList';
 import { MovieThumb } from '../MovieThumb/MovieThumb';
+import { MOVIES } from '../../shared/moviesMock';
 
 describe('MovieList', () => {
-  const movies = [{ id: 1 }, { id: 2 }];
+  const movies = MOVIES.slice(0, 2);
 
   test('renders *No results found*', () => {
     const wrapper = shallow(<MovieList />);

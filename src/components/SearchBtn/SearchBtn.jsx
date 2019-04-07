@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './SearchBtn.scss';
 
@@ -8,4 +9,12 @@ export const SearchBtn = ({ className }) => {
       Search
     </button>
   );
+};
+
+SearchBtn.propTypes = {
+  className: PropTypes.oneOf(['searchBtnPrimary', 'searchBtnSecondary'])
+};
+
+SearchBtn.defaultProps = {
+  className: 'searchBtnPrimary'
 };

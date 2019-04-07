@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class ErrorBondary extends Component {
   static logError(error, info) {
@@ -29,3 +30,7 @@ export class ErrorBondary extends Component {
     return children;
   }
 }
+
+ErrorBondary.propTypes = {
+  children: PropTypes.element.isRequired
+};

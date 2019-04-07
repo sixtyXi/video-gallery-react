@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './MovieCard.scss';
 
@@ -18,3 +19,13 @@ export const MovieCard = ({ movie }) => {
     </article>
   );
 };
+
+MovieCard.propTypes = PropTypes.shape({
+  poster_path: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  vote_average: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  runtime: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired
+}).isRequired;

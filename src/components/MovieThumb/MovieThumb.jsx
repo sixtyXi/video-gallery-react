@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './MovieThumb.scss';
 
@@ -21,4 +22,13 @@ export const MovieThumb = ({ movie }) => {
       <p className={styles.genre}>{mapGenres(genres)}</p>
     </article>
   );
+};
+
+MovieThumb.propTypes = {
+  movie: PropTypes.shape({
+    poster_path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    release_date: PropTypes.string.isRequired
+  }).isRequired
 };

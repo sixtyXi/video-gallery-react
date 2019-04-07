@@ -15,7 +15,7 @@ export const SearchWrapper = () => {
 
       <SortContainer filters={SEARCH_FILTERS} />
 
-      <SearchBtn className="searchBtnPrimary" />
+      <SearchBtn />
     </form>
   );
 };

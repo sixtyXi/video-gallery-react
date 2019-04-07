@@ -3,11 +3,19 @@
 exports[`FilterItem renders correctly 1`] = `
 <Fragment>
   <input
+    checked={false}
     className="filterInput"
+    id="vote_average"
+    name="filterValue"
+    onChange={[MockFunction]}
     type="radio"
+    value="vote_average"
   />
   <label
     className="btn"
-  />
+    htmlFor="vote_average"
+  >
+    rating
+  </label>
 </Fragment>
 `;

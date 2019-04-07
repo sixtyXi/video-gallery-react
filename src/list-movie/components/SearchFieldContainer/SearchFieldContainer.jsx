@@ -7,9 +7,9 @@ export class SearchFieldContainer extends Component {
     searchTxt: ''
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ searchTxt: event.target.value });
-  }
+  };
 
   render() {
     const { searchTxt } = this.state;
