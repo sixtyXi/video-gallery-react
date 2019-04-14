@@ -24,7 +24,7 @@ exports[`SearchWrapper renders correctly 1`] = `
         },
       ]
     }
-    title="Sort by"
+    title="Search by"
     type="btn"
   />
   <SearchBtn
