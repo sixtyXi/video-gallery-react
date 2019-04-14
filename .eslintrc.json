@@ -1,4 +1,7 @@
 {
+  "env": {
+    "browser": true
+  },
   "extends": ["airbnb", "prettier", "plugin:prettier/recommended", "plugin:jest/recommended"],
   "parser": "babel-eslint",
   "plugins": ["prettier", "jest"],
@@ -9,6 +12,7 @@
     "jsx-a11y/label-has-associated-control": [1],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": [2],
+    "react/destructuring-assignment": [2, "always", { "ignoreClassFields": true }],
     "import/prefer-default-export": [0],
     "no-console": ["error", { "allow": ["warn"] }],
     "newline-after-var": ["error", "always"]
