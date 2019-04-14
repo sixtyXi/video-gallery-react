@@ -32,7 +32,7 @@ export const FilterPanel = ({ filters, activeFilter, name, handleChange, type, t
 FilterPanel.propTypes = {
   filters: PropTypes.arrayOf(PropTypes.object),
   activeFilter: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   handleChange: PropTypes.func,
   type: PropTypes.oneOf(['btn', 'label']),
   title: PropTypes.string
@@ -43,5 +43,6 @@ FilterPanel.defaultProps = {
   activeFilter: '',
   type: 'btn',
   title: 'Search by',
-  handleChange: () => {}
+  handleChange: () => {},
+  name: 'filterValue'
 };

@@ -12,7 +12,7 @@ export const MovieCard = ({ movie }) => {
           {movie.title}
         </h1>
         <p>{movie.tagline}</p>
-        <time className={styles.releaseDate}>{movie.release_date}</time>
+        <time className={styles.releaseDate}>{movie.release_date.getFullYear()}</time>
         <p className={styles.runtime}>{`${movie.runtime} min`}</p>
         <p>{movie.overview}</p>
       </div>
@@ -23,9 +23,9 @@ export const MovieCard = ({ movie }) => {
 MovieCard.propTypes = PropTypes.shape({
   poster_path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  vote_average: PropTypes.string.isRequired,
+  vote_average: PropTypes.number.isRequired,
   tagline: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-  runtime: PropTypes.string.isRequired,
+  release_date: PropTypes.instanceOf(Date).isRequired,
+  runtime: PropTypes.number.isRequired,
   overview: PropTypes.string.isRequired
 }).isRequired;
