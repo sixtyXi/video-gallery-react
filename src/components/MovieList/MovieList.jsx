@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './MovieList.scss';
-import { MovieThumb } from '../MovieThumb/MovieThumb';
+import MovieThumbContainer from '../../containers/MovieThumbContainer/MovieThumbContainer';
 
 export const MovieList = ({ movies }) => {
   return movies.length ? (
     <div className={styles.listWrapper}>
       {movies.map(movie => (
-        <MovieThumb key={movie.id} movie={movie} />
+        <MovieThumbContainer key={movie.id} movie={movie} />
       ))}
     </div>
   ) : (
