@@ -14,7 +14,7 @@ export const MovieThumb = ({ movie, handleClick }) => {
       <img className={styles.poster} src={posterPath} alt={`Poster of ${title}`} />
       <div className={styles.titleWrapper}>
         <h2 className={styles.title}>{title}</h2>
-        <time className={styles.releaseDate}>{releaseDate.getFullYear()}</time>
+        <time className={styles.releaseDate}>{new Date(releaseDate).getFullYear()}</time>
       </div>
       <p className={styles.genre}>{mapGenres(genres)}</p>
     </article>
@@ -26,7 +26,7 @@ MovieThumb.propTypes = {
     poster_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     genres: PropTypes.arrayOf(PropTypes.string),
-    release_date: PropTypes.instanceOf(Date)
+    release_date: PropTypes.string
   }).isRequired,
   handleClick: PropTypes.func
 };
