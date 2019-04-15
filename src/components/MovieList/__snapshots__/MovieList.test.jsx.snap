@@ -10,7 +10,7 @@ exports[`MovieList renders correctly 1`] = `
 <div
   className="listWrapper"
 >
-  <MovieThumb
+  <Connect(MovieThumbContainer)
     key="1"
     movie={
       Object {
@@ -28,7 +28,7 @@ exports[`MovieList renders correctly 1`] = `
       }
     }
   />
-  <MovieThumb
+  <Connect(MovieThumbContainer)
     key="2"
     movie={
       Object {

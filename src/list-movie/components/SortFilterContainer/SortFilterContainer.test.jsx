@@ -16,19 +16,4 @@ describe('SortContainer', () => {
   test('renders single component *FilterPanel*', () => {
     expect(wrapper.find(FilterPanel).length).toBe(1);
   });
-
-  test('*filterValue* equals first filter value by default', () => {
-    const firstFilterValue = SORT_FILTERS[0].value;
-
-    expect(wrapper.state().filterValue).toBe(firstFilterValue);
-  });
-
-  test('sets new filter value to state', () => {
-    const newFilterValue = 'new value';
-    const spy = jest.spyOn(wrapper.instance(), 'handleChange');
-
-    expect(wrapper.state().filterValue).not.toBe(newFilterValue);
-    spy.call(wrapper, { target: { value: newFilterValue } });
-    expect(wrapper.state().filterValue).toBe(newFilterValue);
-  });
 });

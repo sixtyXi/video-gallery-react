@@ -8,8 +8,8 @@ exports[`SearchFieldContainer renders correctly 1`] = `
     data-cy="searchField"
     id="search"
     onChange={[Function]}
+    onKeyDown={[Function]}
     type="text"
-    value=""
   />
 </div>
 `;
