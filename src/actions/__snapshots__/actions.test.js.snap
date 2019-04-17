@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actions create SET_MOVIE 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "movie": Object {
+        "genres": Array [
+          "comedies",
+        ],
+        "id": 1,
+        "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+        "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+        "release_date": "1995",
+        "runtime": 97,
+        "tagline": "Oscar-winning Movies",
+        "title": "Four rooms",
+        "vote_average": 3,
+      },
+    },
+    "type": "SET_MOVIE",
+  },
+]
+`;
+
+exports[`actions create SET_MOVIE_LIST 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "movies": Array [
+        Object {
+          "genres": Array [
+            "comedies",
+          ],
+          "id": 1,
+          "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+          "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+          "release_date": "1995",
+          "runtime": 97,
+          "tagline": "Oscar-winning Movies",
+          "title": "Four rooms",
+          "vote_average": 3,
+        },
+        Object {
+          "genres": Array [
+            "action",
+            "adventure",
+          ],
+          "id": 2,
+          "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+          "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+          "release_date": "2003",
+          "runtime": 150,
+          "tagline": "Oscar-winning Movies",
+          "title": "Kill Bill: Vol. 1",
+          "vote_average": 4.5,
+        },
+        Object {
+          "genres": Array [
+            "comedies",
+          ],
+          "id": 3,
+          "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+          "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+          "release_date": "1995",
+          "runtime": 97,
+          "tagline": "Oscar-winning Movies",
+          "title": "Four rooms",
+          "vote_average": 3,
+        },
+        Object {
+          "genres": Array [
+            "action",
+            "adventure",
+          ],
+          "id": 4,
+          "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+          "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+          "release_date": "2003",
+          "runtime": 150,
+          "tagline": "Oscar-winning Movies",
+          "title": "Kill Bill: Vol. 1",
+          "vote_average": 4.5,
+        },
+        Object {
+          "genres": Array [
+            "comedies",
+          ],
+          "id": 5,
+          "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+          "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+          "release_date": "1995",
+          "runtime": 97,
+          "tagline": "Oscar-winning Movies",
+          "title": "Four rooms",
+          "vote_average": 3,
+        },
+        Object {
+          "genres": Array [
+            "action",
+            "adventure",
+          ],
+          "id": 6,
+          "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+          "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+          "release_date": "2003",
+          "runtime": 150,
+          "tagline": "Oscar-winning Movies",
+          "title": "Kill Bill: Vol. 1",
+          "vote_average": 4.5,
+        },
+        Object {
+          "genres": Array [
+            "comedies",
+          ],
+          "id": 7,
+          "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+          "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+          "release_date": "1995",
+          "runtime": 97,
+          "tagline": "Oscar-winning Movies",
+          "title": "Four rooms",
+          "vote_average": 3,
+        },
+      ],
+    },
+    "type": "SET_MOVIE_LIST",
+  },
+]
+`;
+
+exports[`actions create SET_SEARCH 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "searchValue": "cats",
+    },
+    "type": "SET_SEARCH",
+  },
+]
+`;
+
+exports[`actions create SET_SEARCH_BY 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "filterValue": "genres",
+    },
+    "type": "SET_SEARCH_BY",
+  },
+]
+`;
+
+exports[`actions create SET_SORT_BY 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "filterValue": "vote_average",
+    },
+    "type": "SET_SORT_BY",
+  },
+]
+`;
+
+exports[`async actions create SET_MOVIE when fetching has been done 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "movie": Object {},
+    },
+    "type": "SET_MOVIE",
+  },
+]
+`;
+
+exports[`async actions create SET_MOVIE_LIST when fetching has been done 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "movies": Array [
+        Object {
+          "budget": 55000000,
+          "genres": Array [
+            "Drama",
+            "Romance",
+          ],
+          "id": 337167,
+          "overview": "Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg",
+          "release_date": "2018-02-07",
+          "revenue": 136906000,
+          "runtime": 106,
+          "tagline": "Don't miss the climax",
+          "title": "Fifty Shades Freed",
+          "vote_average": 6.1,
+          "vote_count": 1195,
+        },
+        Object {
+          "budget": 150000000,
+          "genres": Array [
+            "Animation",
+            "Adventure",
+            "Family",
+            "Comedy",
+          ],
+          "id": 269149,
+          "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg",
+          "release_date": "2016-02-11",
+          "revenue": 1023784195,
+          "runtime": 108,
+          "tagline": "Welcome to the urban jungle.",
+          "title": "Zootopia",
+          "vote_average": 7.7,
+          "vote_count": 6795,
+        },
+        Object {
+          "budget": 200000000,
+          "genres": Array [
+            "Fantasy",
+            "Adventure",
+            "Science Fiction",
+          ],
+          "id": 181808,
+          "overview": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+          "release_date": "2017-12-13",
+          "revenue": 1325937250,
+          "runtime": 152,
+          "tagline": "The Saga Continues",
+          "title": "Star Wars: The Last Jedi",
+          "vote_average": 7.1,
+          "vote_count": 4732,
+        },
+        Object {
+          "budget": 200000000,
+          "genres": Array [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Science Fiction",
+          ],
+          "id": 284054,
+          "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan \\"special forces\\"), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+          "release_date": "2018-02-13",
+          "revenue": 1245257672,
+          "runtime": 134,
+          "tagline": "Long live the king",
+          "title": "Black Panther",
+          "vote_average": 7.3,
+          "vote_count": 3788,
+        },
+        Object {
+          "budget": 175000000,
+          "genres": Array [
+            "Adventure",
+            "Comedy",
+            "Family",
+            "Animation",
+          ],
+          "id": 354912,
+          "overview": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+          "release_date": "2017-10-27",
+          "revenue": 700920729,
+          "runtime": 105,
+          "tagline": "The celebration of a lifetime",
+          "title": "Coco",
+          "vote_average": 7.8,
+          "vote_count": 3619,
+        },
+        Object {
+          "budget": 175000000,
+          "genres": Array [
+            "Adventure",
+            "Science Fiction",
+            "Action",
+          ],
+          "id": 333339,
+          "overview": "When the creator of a popular video game system dies, a virtual contest is created to compete for his fortune.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg",
+          "release_date": "2018-03-28",
+          "revenue": 0,
+          "runtime": 140,
+          "tagline": "A better reality awaits.",
+          "title": "Ready Player One",
+          "vote_average": 8.1,
+          "vote_count": 617,
+        },
+        Object {
+          "budget": 94000000,
+          "genres": Array [
+            "Action",
+            "Adventure",
+          ],
+          "id": 338970,
+          "overview": "Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/ePyN2nX9t8SOl70eRW47Q29zUFO.jpg",
+          "release_date": "2018-03-08",
+          "revenue": 126025000,
+          "runtime": 118,
+          "tagline": "Her legend begins",
+          "title": "Tomb Raider",
+          "vote_average": 6.2,
+          "vote_count": 817,
+        },
+        Object {
+          "budget": 180000000,
+          "genres": Array [
+            "Action",
+            "Adventure",
+            "Fantasy",
+          ],
+          "id": 284053,
+          "overview": "Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the prophecy of destruction to his homeworld and the end of Asgardian civilization, at the hands of an all-powerful new threat, the ruthless Hela.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+          "release_date": "2017-10-25",
+          "revenue": 854229371,
+          "runtime": 130,
+          "tagline": "No Hammer. No Problem.",
+          "title": "Thor: Ragnarok",
+          "vote_average": 7.4,
+          "vote_count": 5349,
+        },
+        Object {
+          "budget": 160000000,
+          "genres": Array [
+            "Family",
+            "Fantasy",
+            "Romance",
+          ],
+          "id": 321612,
+          "overview": "A live-action adaptation of Disney's version of the classic tale of a cursed prince and a beautiful young woman who helps him break the spell.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
+          "release_date": "2017-03-16",
+          "revenue": 1263521126,
+          "runtime": 129,
+          "tagline": "Be our guest.",
+          "title": "Beauty and the Beast",
+          "vote_average": 6.8,
+          "vote_count": 7861,
+        },
+        Object {
+          "budget": 19500000,
+          "genres": Array [
+            "Drama",
+            "Fantasy",
+            "Romance",
+          ],
+          "id": 399055,
+          "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg",
+          "release_date": "2017-12-01",
+          "revenue": 185545281,
+          "runtime": 123,
+          "tagline": "A Fairy Tale for Troubled Times",
+          "title": "The Shape of Water",
+          "vote_average": 7.3,
+          "vote_count": 3200,
+        },
+      ],
+    },
+    "type": "SET_MOVIE_LIST",
+  },
+]
+`;
