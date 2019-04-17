@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`movieList reducer should handle SET_MOVIE_LIST 1`] = `
+Object {
+  "movies": Array [
+    Object {
+      "genres": Array [
+        "comedies",
+      ],
+      "id": 1,
+      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+      "release_date": "1995",
+      "runtime": 97,
+      "tagline": "Oscar-winning Movies",
+      "title": "Four rooms",
+      "vote_average": 3,
+    },
+    Object {
+      "genres": Array [
+        "action",
+        "adventure",
+      ],
+      "id": 2,
+      "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+      "release_date": "2003",
+      "runtime": 150,
+      "tagline": "Oscar-winning Movies",
+      "title": "Kill Bill: Vol. 1",
+      "vote_average": 4.5,
+    },
+    Object {
+      "genres": Array [
+        "comedies",
+      ],
+      "id": 3,
+      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+      "release_date": "1995",
+      "runtime": 97,
+      "tagline": "Oscar-winning Movies",
+      "title": "Four rooms",
+      "vote_average": 3,
+    },
+    Object {
+      "genres": Array [
+        "action",
+        "adventure",
+      ],
+      "id": 4,
+      "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+      "release_date": "2003",
+      "runtime": 150,
+      "tagline": "Oscar-winning Movies",
+      "title": "Kill Bill: Vol. 1",
+      "vote_average": 4.5,
+    },
+    Object {
+      "genres": Array [
+        "comedies",
+      ],
+      "id": 5,
+      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+      "release_date": "1995",
+      "runtime": 97,
+      "tagline": "Oscar-winning Movies",
+      "title": "Four rooms",
+      "vote_average": 3,
+    },
+    Object {
+      "genres": Array [
+        "action",
+        "adventure",
+      ],
+      "id": 6,
+      "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+      "release_date": "2003",
+      "runtime": 150,
+      "tagline": "Oscar-winning Movies",
+      "title": "Kill Bill: Vol. 1",
+      "vote_average": 4.5,
+    },
+    Object {
+      "genres": Array [
+        "comedies",
+      ],
+      "id": 7,
+      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+      "release_date": "1995",
+      "runtime": 97,
+      "tagline": "Oscar-winning Movies",
+      "title": "Four rooms",
+      "vote_average": 3,
+    },
+  ],
+  "search": "",
+  "searchBy": "title",
+  "sortBy": "release_date",
+}
+`;
+
+exports[`movieList reducer should handle SET_SEARCH 1`] = `
+Object {
+  "movies": Array [],
+  "search": "cats",
+  "searchBy": "title",
+  "sortBy": "release_date",
+}
+`;
+
+exports[`movieList reducer should handle SET_SEARCH_BY 1`] = `
+Object {
+  "movies": Array [],
+  "search": "",
+  "searchBy": "genres",
+  "sortBy": "release_date",
+}
+`;
+
+exports[`movieList reducer should handle SET_SORT_BY 1`] = `
+Object {
+  "movies": Array [],
+  "search": "",
+  "searchBy": "title",
+  "sortBy": "vote_average",
+}
+`;
+
+exports[`movieList reducer should return the initial state 1`] = `
+Object {
+  "movies": Array [],
+  "search": "",
+  "searchBy": "title",
+  "sortBy": "release_date",
+}
+`;
