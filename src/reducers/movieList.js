@@ -1,7 +1,7 @@
 import { SET_MOVIE_LIST, SET_SEARCH_BY, SET_SORT_BY, SET_SEARCH } from '../actions/actions';
 import { SEARCH_FILTERS, SORT_FILTERS } from '../shared/filtersMock';
 
-const initialState = {
+export const initialState = {
   movies: [],
   searchBy: SEARCH_FILTERS[0].value,
   sortBy: SORT_FILTERS[0].value,

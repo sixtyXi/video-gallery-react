@@ -5,6 +5,8 @@ import fetch from 'isomorphic-fetch';
 
 import { MOVIES } from '../shared/moviesMock';
 import { SEARCH_FILTERS, SORT_FILTERS } from '../shared/filtersMock';
+import { initialState as movieList } from '../reducers/movieList';
+import { initialState as movie } from '../reducers/moviePage';
 
 import {
   setMovieList,
@@ -21,17 +23,8 @@ let store;
 
 const BASE_URL = 'https://localhost:8000';
 const INITIAL_STATE = {
-  movieList: {
-    movies: [],
-    searchBy: SEARCH_FILTERS[0].value,
-    sortBy: SORT_FILTERS[0].value,
-    search: ''
-  },
-  movie: {
-    movie: null,
-    genres: [],
-    movies: []
-  }
+  movieList,
+  movie
 };
 
 describe('actions', () => {

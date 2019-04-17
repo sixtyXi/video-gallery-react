@@ -1,6 +1,6 @@
 import { SET_MOVIE, SET_MOVIES_BY_GENRE } from '../actions/actions';
 
-const initialState = {
+export const initialState = {
   movie: null,
   genres: [],
   movies: []
