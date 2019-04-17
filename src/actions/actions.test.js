@@ -90,12 +90,12 @@ describe('async actions', () => {
   });
 
   test('create SET_MOVIE when fetching has been done', () => {
-    const id = MOVIES[0].id;
-    const movie = MOVIES[0];
+    const receivedMovie = MOVIES[0];
+    const { id } = receivedMovie;
 
     nock(BASE_URL)
       .get(`/movies/${id}`)
-      .reply(200, movie);
+      .reply(200, receivedMovie);
 
     return store.dispatch(fetchMovie(id)).then(() => {
       expect(store.getActions()).toMatchSnapshot();

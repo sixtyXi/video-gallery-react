@@ -10,7 +10,7 @@ export class SearchFieldContainer extends Component {
     this.props.setSearchValue(event.target.value);
   };
 
-  handleSubmit = event => {
+  handleKeyDown = event => {
     if (event.keyCode === 13) {
       event.preventDefault();
       this.props.getMovies();
@@ -28,7 +28,7 @@ export class SearchFieldContainer extends Component {
           value={searchTxt}
           id="search"
           onChange={this.handleChange}
-          onKeyDown={this.handleSubmit}
+          onKeyDown={this.handleKeyDown}
         />
       </div>
     );

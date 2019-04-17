@@ -7,10 +7,16 @@ import { mapGenres } from '../../utils/utils';
 export const MovieThumb = ({ movie, handleClick }) => {
   if (!movie) return null;
 
+  const onClick = () => {
+    const { id } = movie;
+
+    handleClick(id);
+  };
+
   const { genres = [], poster_path: posterPath, title, release_date: releaseDate } = movie;
 
   return (
-    <article onClick={handleClick} data-cy="movieThumb" className={styles.wrapper}>
+    <article onClick={onClick} data-cy="movieThumb" className={styles.wrapper}>
       <img className={styles.poster} src={posterPath} alt={`Poster of ${title}`} />
       <div className={styles.titleWrapper}>
         <h2 className={styles.title}>{title}</h2>
@@ -32,5 +38,5 @@ MovieThumb.propTypes = {
 };
 
 MovieThumb.defaultProps = {
-  handleClick: () => {}
+  handleClick: null
 };

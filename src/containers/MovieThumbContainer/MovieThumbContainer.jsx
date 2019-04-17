@@ -8,7 +8,7 @@ import { fetchMovie } from '../../actions/actions';
 export const MovieThumbContainer = props => {
   const { getMovie, movie } = props;
 
-  return <MovieThumb handleClick={() => getMovie(movie.id)} movie={movie} />;
+  return <MovieThumb handleClick={getMovie} movie={movie} />;
 };
 
 MovieThumbContainer.propTypes = {

@@ -9,8 +9,6 @@ import { SEARCH_FILTERS } from '../../../shared/filtersMock';
 const SEARCH_TITLE = 'Search by';
 
 export class SearchFilterContainer extends Component {
-  panelType = 'btn';
-
   handleChange = event => {
     this.props.setFilterValue(event.target.value);
   };
@@ -23,7 +21,7 @@ export class SearchFilterContainer extends Component {
         handleChange={this.handleChange}
         title={SEARCH_TITLE}
         filters={SEARCH_FILTERS}
-        type={this.panelType}
+        type="btn"
         activeFilter={currentFilter}
         name="searchFilter"
       />

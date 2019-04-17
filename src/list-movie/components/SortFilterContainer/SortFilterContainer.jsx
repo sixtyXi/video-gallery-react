@@ -9,8 +9,6 @@ import { SORT_FILTERS } from '../../../shared/filtersMock';
 const SORT_TITLE = 'Sort by';
 
 export class SortFilterContainer extends Component {
-  panelType = 'label';
-
   handleChange = event => {
     this.props.setFilterValue(event.target.value);
   };
@@ -23,7 +21,7 @@ export class SortFilterContainer extends Component {
         handleChange={this.handleChange}
         title={SORT_TITLE}
         filters={SORT_FILTERS}
-        type={this.panelType}
+        type="label"
         activeFilter={currentFilter}
         name="sortFilter"
       />
