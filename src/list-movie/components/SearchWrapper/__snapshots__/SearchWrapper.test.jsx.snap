@@ -9,23 +9,8 @@ exports[`SearchWrapper renders correctly 1`] = `
   >
     Find your movie
   </h1>
-  <SearchFieldContainer />
-  <SortContainer
-    filters={
-      Array [
-        Object {
-          "title": "title",
-          "value": "title",
-        },
-        Object {
-          "title": "genre",
-          "value": "genre",
-        },
-      ]
-    }
-  />
-  <SearchBtn
-    className="searchBtnPrimary"
-  />
+  <Connect(SearchFieldContainer) />
+  <Connect(SearchFilterContainer) />
+  <Connect(SearchBtnContainer) />
 </form>
 `;

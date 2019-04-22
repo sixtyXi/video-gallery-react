@@ -15,13 +15,19 @@ exports[`FilterPanel renders correctly 1`] = `
     checked={false}
     filterTitle="release date"
     filterValue="release_date"
+    handleChange={[Function]}
     key="release_date"
+    name="filterValue"
+    type="btn"
   />
   <FilterItem
     checked={false}
     filterTitle="rating"
     filterValue="vote_average"
+    handleChange={[Function]}
     key="vote_average"
+    name="filterValue"
+    type="btn"
   />
 </div>
 `;

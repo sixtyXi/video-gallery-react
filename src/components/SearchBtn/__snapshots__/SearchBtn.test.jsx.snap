@@ -2,7 +2,8 @@
 
 exports[`SearchBtn renders correctly 1`] = `
 <button
-  className="searchBtn undefined"
+  className="searchBtn searchBtnPrimary"
+  onClick={[Function]}
   type="button"
 >
   Search

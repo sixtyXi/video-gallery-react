@@ -15,7 +15,7 @@ export const SEARCH_FILTERS = [
     title: 'title'
   },
   {
-    value: 'genre',
+    value: 'genres',
     title: 'genre'
   }
 ];

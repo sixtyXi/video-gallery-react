@@ -4,6 +4,7 @@ exports[`MovieThumb renders correctly 1`] = `
 <article
   className="wrapper"
   data-cy="movieThumb"
+  onClick={[Function]}
 >
   <img
     alt="Poster of Kill Bill: Vol. 1"

@@ -2,10 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { MovieList } from './MovieList';
-import { MovieThumb } from '../MovieThumb/MovieThumb';
+import MovieThumbContainer from '../../containers/MovieThumbContainer/MovieThumbContainer';
+import { MOVIES } from '../../shared/moviesMock';
 
 describe('MovieList', () => {
-  const movies = [{ id: 1 }, { id: 2 }];
+  const movies = MOVIES.slice(0, 2);
 
   test('renders *No results found*', () => {
     const wrapper = shallow(<MovieList />);
@@ -19,9 +20,9 @@ describe('MovieList', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('renders two components *MovieThumb*', () => {
+  test('renders two components *MovieThumbContainer*', () => {
     const wrapper = shallow(<MovieList movies={movies} />);
 
-    expect(wrapper.find(MovieThumb).length).toBe(2);
+    expect(wrapper.find(MovieThumbContainer).length).toBe(2);
   });
 });

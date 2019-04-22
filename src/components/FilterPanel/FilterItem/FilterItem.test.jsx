@@ -3,11 +3,27 @@ import { shallow } from 'enzyme';
 
 import { FilterItem } from './FilterItem';
 
-let handleChange;
-
 describe('FilterItem', () => {
+  const filter = {
+    value: 'vote_average',
+    title: 'rating'
+  };
+  const name = 'filterValue';
+
+  let handleChange;
+
+  let wrapper;
+
   beforeEach(() => {
     handleChange = jest.fn();
+    wrapper = shallow(
+      <FilterItem
+        name={name}
+        handleChange={handleChange}
+        filterValue={filter.value}
+        filterTitle={filter.title}
+      />
+    );
   });
 
   afterEach(() => {
@@ -15,13 +31,10 @@ describe('FilterItem', () => {
   });
 
   test('renders correctly', () => {
-    const wrapper = shallow(<FilterItem />);
-
     expect(wrapper).toMatchSnapshot();
   });
 
   test('calls *handleChange*', () => {
-    const wrapper = shallow(<FilterItem handleChange={handleChange} />);
     const input = wrapper.find('input');
 
     input.simulate('change');
@@ -29,24 +42,18 @@ describe('FilterItem', () => {
   });
 
   test('displays *filterTitle*', () => {
-    const filterTitle = 'genre';
-
-    const wrapper = shallow(<FilterItem handleChange={handleChange} filterTitle={filterTitle} />);
     const btnTitle = wrapper.find('label').text();
 
-    expect(btnTitle).toBe(filterTitle);
+    expect(btnTitle).toBe(filter.title);
   });
 
   test('manages correctly *filterValue*', () => {
-    const filterValue = 'release_date';
-
-    const wrapper = shallow(<FilterItem handleChange={handleChange} filterValue={filterValue} />);
     const input = wrapper.find('input');
 
     const inputId = input.prop('id');
     const inputValue = input.prop('value');
 
-    expect(inputId).toBe(filterValue);
-    expect(inputValue).toBe(filterValue);
+    expect(inputId).toBe(filter.value);
+    expect(inputValue).toBe(filter.value);
   });
 });

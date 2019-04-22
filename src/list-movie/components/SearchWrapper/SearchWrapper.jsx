@@ -1,10 +1,9 @@
 import React from 'react';
 
 import styles from './SearchWrapper.scss';
-import { SearchBtn } from '../../../components/SearchBtn/SearchBtn';
-import { SearchFieldContainer } from '../SearchFieldContainer/SearchFieldContainer';
-import { SortContainer } from '../SortContainer/SortContainer';
-import { SEARCH_FILTERS } from '../../../shared/filtersMock';
+import SearchBtnContainer from '../../../containers/SearchBtnContainer/SearchBtnContainer';
+import SearchFieldContainer from '../SearchFieldContainer/SearchFieldContainer';
+import SearchFilterContainer from '../SearchFilterContainer/SearchFilterContainer';
 
 export const SearchWrapper = () => {
   return (
@@ -13,9 +12,9 @@ export const SearchWrapper = () => {
 
       <SearchFieldContainer />
 
-      <SortContainer filters={SEARCH_FILTERS} />
+      <SearchFilterContainer />
 
-      <SearchBtn className="searchBtnPrimary" />
+      <SearchBtnContainer />
     </form>
   );
 };
