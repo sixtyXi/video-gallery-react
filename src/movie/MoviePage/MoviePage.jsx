@@ -6,7 +6,6 @@ import MoviesByGenreContainer from '../components/MoviesByGenreContainer/MoviesB
 import { Logo } from '../../components/Logo/Logo';
 import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
 import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
-import { SummaryInfo } from '../../components/SummaryInfo/SummaryInfo';
 import MovieCardContainer from '../components/MovieCardContainer/MovieCardContainer';
 import GenresInfoContainer from '../components/GenresInfoContainer/GenresInfoContainer';
 
@@ -21,9 +20,7 @@ export const MoviePage = () => {
         </ContentWrapper>
       </Header>
       <main>
-        <SummaryInfo>
-          <GenresInfoContainer />
-        </SummaryInfo>
+        <GenresInfoContainer />
         <ContentWrapper>
           <MoviesByGenreContainer />
         </ContentWrapper>
