@@ -12,7 +12,7 @@ export const MovieList = ({ movies }) => {
       ))}
     </div>
   ) : (
-    <p>No results found</p>
+    <p className={styles.emptyResult}>No films found</p>
   );
 };
 
