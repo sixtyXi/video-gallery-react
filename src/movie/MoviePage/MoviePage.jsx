@@ -19,7 +19,7 @@ export const MoviePage = () => {
           <Link to="/">
             <SearchBtn className="searchBtnSecondary" />
           </Link>
-          <MovieCardContainer id={680} />
+          <MovieCardContainer />
         </ContentWrapper>
       </Header>
       <main>

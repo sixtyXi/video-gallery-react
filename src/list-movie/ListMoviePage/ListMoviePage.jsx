@@ -1,20 +1,21 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { Header } from '../../components/Header/Header';
 import { Logo } from '../../components/Logo/Logo';
 import { Footer } from '../../components/Footer/Footer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
-import { SearchWrapper } from '../components/SearchWrapper/SearchWrapper';
+import SearchContainer from '../components/SearchContainer/SearchContainer';
 import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
 import SummaryListMovieContainer from '../components/SummaryListMovieContainer/SummaryListMovieContainer';
+import UpdateFiltersContainer from '../components/UpdateFiltersContainer/UpdateFiltersContainer';
 
 export const ListMoviePage = () => {
   return (
-    <Fragment>
+    <UpdateFiltersContainer>
       <Header>
         <ContentWrapper>
           <Logo />
-          <SearchWrapper />
+          <SearchContainer />
         </ContentWrapper>
       </Header>
       <main>
@@ -24,6 +25,6 @@ export const ListMoviePage = () => {
         </ContentWrapper>
       </main>
       <Footer />
-    </Fragment>
+    </UpdateFiltersContainer>
   );
 };
