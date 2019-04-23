@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieList renders *No results found* 1`] = `
-<p>
-  No results found
+<p
+  className="emptyResult"
+>
+  No films found
 </p>
 `;
 
@@ -10,7 +12,7 @@ exports[`MovieList renders correctly 1`] = `
 <div
   className="listWrapper"
 >
-  <Connect(MovieThumbContainer)
+  <MovieThumb
     key="1"
     movie={
       Object {
@@ -28,7 +30,7 @@ exports[`MovieList renders correctly 1`] = `
       }
     }
   />
-  <Connect(MovieThumbContainer)
+  <MovieThumb
     key="2"
     movie={
       Object {

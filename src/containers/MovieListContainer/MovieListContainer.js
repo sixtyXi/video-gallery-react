@@ -3,16 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { MovieList } from '../../components/MovieList/MovieList';
-import { fetchMovieList } from '../../actions/actions';
 import { SORT_FILTERS } from '../../shared/filtersMock';
 
 export class MovieListContainer extends Component {
-  componentDidMount() {
-    const { getMovies } = this.props;
-
-    getMovies();
-  }
-
   getSortedMovies = () => {
     const { movies, sortBy } = this.props;
 
@@ -35,8 +28,7 @@ export class MovieListContainer extends Component {
 
 MovieListContainer.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.object),
-  sortBy: PropTypes.string.isRequired,
-  getMovies: PropTypes.func.isRequired
+  sortBy: PropTypes.string.isRequired
 };
 
 MovieListContainer.defaultProps = {
@@ -48,9 +40,4 @@ const mapStateToProps = state => ({
   sortBy: state.movieList.sortBy
 });
 
-const mapDispatchToProps = dispatch => ({ getMovies: () => dispatch(fetchMovieList()) });
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MovieListContainer);
+export default connect(mapStateToProps)(MovieListContainer);

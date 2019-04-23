@@ -1,34 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieThumb renders correctly 1`] = `
-<article
-  className="wrapper"
-  data-cy="movieThumb"
-  onClick={[Function]}
+<Link
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }
+  to="/film/2"
 >
-  <img
-    alt="Poster of Kill Bill: Vol. 1"
-    className="poster"
-    src="https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg"
-  />
-  <div
-    className="titleWrapper"
+  <article
+    className="wrapper"
+    data-cy="movieThumb"
   >
-    <h2
-      className="title"
+    <img
+      alt="Poster of Kill Bill: Vol. 1"
+      className="poster"
+      src="https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg"
+    />
+    <div
+      className="titleWrapper"
     >
-      Kill Bill: Vol. 1
-    </h2>
-    <time
-      className="releaseDate"
+      <h2
+        className="title"
+      >
+        Kill Bill: Vol. 1
+      </h2>
+      <time
+        className="releaseDate"
+      >
+        2003
+      </time>
+    </div>
+    <p
+      className="genre"
     >
-      2003
-    </time>
-  </div>
-  <p
-    className="genre"
-  >
-    Action & Adventure
-  </p>
-</article>
+      Action & Adventure
+    </p>
+  </article>
+</Link>
 `;

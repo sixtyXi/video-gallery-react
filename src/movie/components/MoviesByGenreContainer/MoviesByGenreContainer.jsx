@@ -27,24 +27,34 @@ const isEqualMovies = (arr1, arr2) => {
 };
 
 export class MoviesByGenreContainer extends Component {
-  shouldComponentUpdate(nextProps) {
-    const { genres, movies, getMoviesByGenre } = this.props;
 
-    if (!isEqualGenre(genres, nextProps.genres)) {
+  shouldComponentUpdate(nextProps) {
+    const { movies, movie, getMoviesByGenre } = this.props;
+    const { movies: nextMovies, movie: nextMovie } = nextProps;
+
+    const movieId = movie ? movie.id : null;
+    const nextMovieId = nextMovie ? nextMovie.id : null;
+
+    if (movieId !== nextMovieId) {
       getMoviesByGenre(nextProps.genres);
     }
 
-    return !isEqualMovies(movies, nextProps.movies);
+    const shouldUpdate = !isEqualMovies(
+      this.getFilteredMovies(movies, movie),
+      this.getFilteredMovies(nextMovies, nextMovie)
+    );
+
+    return shouldUpdate;
   }
 
-  getMoviesExceptCurrent = () => {
-    const { movies, movie } = this.props;
-
+  getFilteredMovies = (movies, movie) => {
     return movie ? movies.filter(el => el.id !== movie.id) : movies;
   };
 
   render() {
-    return <MovieList movies={this.getMoviesExceptCurrent()} />;
+    const { movies, movie } = this.props;
+
+    return <MovieList movies={this.getFilteredMovies(movies, movie)} />;
   }
 }
 
