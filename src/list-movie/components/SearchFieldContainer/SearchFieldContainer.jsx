@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -13,6 +14,7 @@ export class SearchFieldContainer extends Component {
   handleKeyDown = event => {
     if (event.keyCode === 13) {
       event.preventDefault();
+      this.props.pushUrl();
       this.props.getMovies();
     }
   };
@@ -38,7 +40,8 @@ export class SearchFieldContainer extends Component {
 SearchFieldContainer.propTypes = {
   searchTxt: PropTypes.string.isRequired,
   setSearchValue: PropTypes.func.isRequired,
-  getMovies: PropTypes.func.isRequired
+  getMovies: PropTypes.func.isRequired,
+  pushUrl: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({ searchTxt: state.movieList.search });
@@ -47,7 +50,9 @@ const mapDispatchToProps = dispatch => ({
   getMovies: () => dispatch(fetchMovieList())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SearchFieldContainer);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(SearchFieldContainer)
+);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchWrapper renders correctly 1`] = `
+exports[`SearchContainer renders correctly 1`] = `
 <form
   className="searchWrapper"
 >
@@ -9,8 +9,12 @@ exports[`SearchWrapper renders correctly 1`] = `
   >
     Find your movie
   </h1>
-  <Connect(SearchFieldContainer) />
+  <withRouter(Connect(SearchFieldContainer))
+    pushUrl={[Function]}
+  />
   <Connect(SearchFilterContainer) />
-  <Connect(SearchBtnContainer) />
+  <Connect(SearchBtnContainer)
+    pushUrl={[Function]}
+  />
 </form>
 `;

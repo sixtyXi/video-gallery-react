@@ -1,11 +1,15 @@
-import { SET_MOVIE_LIST, SET_SEARCH_BY, SET_SORT_BY, SET_SEARCH } from '../actions/actions';
-import { SEARCH_FILTERS, SORT_FILTERS } from '../shared/filtersMock';
+import {
+  SET_MOVIE_LIST,
+  SET_SEARCH_BY,
+  SET_SORT_BY,
+  SET_SEARCH,
+  SET_INITIAL_STATE
+} from '../actions/actions';
+import { DEFAULT_FILTERS } from '../shared/filtersMock';
 
 export const initialState = {
   movies: [],
-  searchBy: SEARCH_FILTERS[0].value,
-  sortBy: SORT_FILTERS[0].value,
-  search: ''
+  ...DEFAULT_FILTERS
 };
 
 export const movieList = (state = initialState, action) => {
@@ -30,7 +34,8 @@ export const movieList = (state = initialState, action) => {
         ...state,
         search: action.payload.searchValue
       };
-
+    case SET_INITIAL_STATE:
+      return initialState;
     default:
       return state;
   }
