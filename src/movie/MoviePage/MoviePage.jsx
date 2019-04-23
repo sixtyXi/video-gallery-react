@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Header } from '../../components/Header/Header';
-import { Footer } from '../../components/Footer/Footer';
 import MoviesByGenreContainer from '../components/MoviesByGenreContainer/MoviesByGenreContainer';
 import { Logo } from '../../components/Logo/Logo';
 import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
@@ -14,13 +13,11 @@ export const MoviePage = () => {
   return (
     <Fragment>
       <Header>
-        <ContentWrapper>
-          <Logo />
-          <Link to="/">
-            <SearchBtn className="searchBtnSecondary" />
-          </Link>
-          <MovieCardContainer />
-        </ContentWrapper>
+        <Logo />
+        <Link to="/">
+          <SearchBtn className="searchBtnSecondary" />
+        </Link>
+        <MovieCardContainer />
       </Header>
       <main>
         <GenresInfoContainer />
@@ -28,7 +25,6 @@ export const MoviePage = () => {
           <MoviesByGenreContainer />
         </ContentWrapper>
       </main>
-      <Footer />
     </Fragment>
   );
 };

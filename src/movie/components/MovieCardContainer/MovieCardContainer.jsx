@@ -32,7 +32,11 @@ export class MovieCardContainer extends Component {
   render() {
     const { movie } = this.props;
 
-    return Object.keys(movie).length === 0 ? <Redirect to="/404" /> : <MovieCard movie={movie} />;
+    if (movie) {
+      return Object.keys(movie).length === 0 ? <Redirect to="/404" /> : <MovieCard movie={movie} />;
+    }
+
+    return null;
   }
 }
 
@@ -44,7 +48,7 @@ MovieCardContainer.propTypes = {
     vote_average: PropTypes.number.isRequired,
     tagline: PropTypes.string.isRequired,
     release_date: PropTypes.string.isRequired,
-    runtime: PropTypes.number.isRequired,
+    runtime: PropTypes.number,
     overview: PropTypes.string.isRequired
   }),
   getMovie: PropTypes.func.isRequired,

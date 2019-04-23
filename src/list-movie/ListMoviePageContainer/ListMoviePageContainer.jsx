@@ -4,16 +4,18 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 
+import { ListMoviePage } from '../ListMoviePage/ListMoviePage';
+
 import {
   fetchMovieList,
   setSearch,
   setSearchBy,
   setSortBy,
   setInitialState
-} from '../../../actions/actions';
-import { SORT_FILTERS, SEARCH_FILTERS, DEFAULT_FILTERS } from '../../../shared/filtersMock';
+} from '../../actions/actions';
+import { SORT_FILTERS, SEARCH_FILTERS, DEFAULT_FILTERS } from '../../shared/filtersMock';
 
-export class UpdateFiltersContainer extends Component {
+export class ListMoviePageContainer extends Component {
   componentDidMount() {
     const { getMovies } = this.props;
 
@@ -88,13 +90,11 @@ export class UpdateFiltersContainer extends Component {
   };
 
   render() {
-    const { children } = this.props;
-
-    return children;
+    return <ListMoviePage />;
   }
 }
 
-UpdateFiltersContainer.propTypes = {
+ListMoviePageContainer.propTypes = {
   getMovies: PropTypes.func.isRequired,
   setSearchValue: PropTypes.func.isRequired,
   setSearchFilter: PropTypes.func.isRequired,
@@ -102,12 +102,7 @@ UpdateFiltersContainer.propTypes = {
   setDefaultState: PropTypes.func.isRequired,
   location: PropTypes.shape({
     search: PropTypes.string
-  }).isRequired,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-};
-
-UpdateFiltersContainer.defaultProps = {
-  children: null
+  }).isRequired
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -122,5 +117,5 @@ export default withRouter(
   connect(
     null,
     mapDispatchToProps
-  )(UpdateFiltersContainer)
+  )(ListMoviePageContainer)
 );

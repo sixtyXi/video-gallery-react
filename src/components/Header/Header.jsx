@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Header.scss';
 
+import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
+
 export const Header = ({ children }) => {
   return (
     <header data-cy="header" className={styles.header}>
-      {children}
+      <ContentWrapper>{children}</ContentWrapper>
     </header>
   );
 };
