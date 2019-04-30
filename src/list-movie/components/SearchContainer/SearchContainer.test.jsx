@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { SearchWrapper } from './SearchWrapper';
+import { SearchContainer } from './SearchContainer';
 
-describe('SearchWrapper', () => {
+describe('SearchContainer', () => {
   test('renders correctly', () => {
-    const wrapper = shallow(<SearchWrapper />);
+    const wrapper = shallow(<SearchContainer />);
 
     expect(wrapper).toMatchSnapshot();
   });

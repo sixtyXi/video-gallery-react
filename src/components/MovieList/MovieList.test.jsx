@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { MovieList } from './MovieList';
-import MovieThumbContainer from '../../containers/MovieThumbContainer/MovieThumbContainer';
+import { MovieThumb } from '../MovieThumb/MovieThumb';
 import { MOVIES } from '../../shared/moviesMock';
 
 describe('MovieList', () => {
@@ -20,9 +20,9 @@ describe('MovieList', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('renders two components *MovieThumbContainer*', () => {
+  test('renders two components *MovieThumb*', () => {
     const wrapper = shallow(<MovieList movies={movies} />);
 
-    expect(wrapper.find(MovieThumbContainer).length).toBe(2);
+    expect(wrapper.find(MovieThumb).length).toBe(2);
   });
 });

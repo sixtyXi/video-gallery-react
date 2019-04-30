@@ -6,6 +6,7 @@ export const SET_SORT_BY = 'SET_SORT_BY';
 export const SET_SEARCH = 'SET_SEARCH';
 export const SET_MOVIE = 'SET_MOVIE';
 export const SET_MOVIES_BY_GENRE = 'SET_MOVIES_BY_GENRE';
+export const SET_INITIAL_STATE = 'SET_INITIAL_STATE';
 
 export const setMovieList = movies => {
   return {
@@ -31,6 +32,12 @@ export const setMoviesByGenre = movies => {
     payload: {
       movies
     }
+  };
+};
+
+export const setInitialState = () => {
+  return {
+    type: SET_INITIAL_STATE
   };
 };
 

@@ -2,33 +2,24 @@ import React, { Fragment } from 'react';
 
 import { Header } from '../../components/Header/Header';
 import { Logo } from '../../components/Logo/Logo';
-import { Footer } from '../../components/Footer/Footer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
-import { SearchWrapper } from '../components/SearchWrapper/SearchWrapper';
-import SortFilterContainer from '../components/SortFilterContainer/SortFilterContainer';
+import SearchContainer from '../components/SearchContainer/SearchContainer';
 import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
-import { SummaryInfo } from '../../components/SummaryInfo/SummaryInfo';
-import MovieQtyContainer from '../components/MovieQtyContainer/MovieQtyContainer';
+import SummaryListMovieContainer from '../components/SummaryListMovieContainer/SummaryListMovieContainer';
 
 export const ListMoviePage = () => {
   return (
     <Fragment>
       <Header>
-        <ContentWrapper>
-          <Logo />
-          <SearchWrapper />
-        </ContentWrapper>
+        <Logo />
+        <SearchContainer />
       </Header>
       <main>
-        <SummaryInfo>
-          <MovieQtyContainer />
-          <SortFilterContainer />
-        </SummaryInfo>
+        <SummaryListMovieContainer />
         <ContentWrapper>
           <MovieListContainer />
         </ContentWrapper>
       </main>
-      <Footer />
     </Fragment>
   );
 };

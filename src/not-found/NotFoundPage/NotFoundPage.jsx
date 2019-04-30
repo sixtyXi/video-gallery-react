@@ -2,14 +2,12 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Header } from '../../components/Header/Header';
-import MoviesByGenreContainer from '../components/MoviesByGenreContainer/MoviesByGenreContainer';
 import { Logo } from '../../components/Logo/Logo';
-import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
 import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
-import MovieCardContainer from '../components/MovieCardContainer/MovieCardContainer';
-import GenresInfoContainer from '../components/GenresInfoContainer/GenresInfoContainer';
+import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
+import { NotFoundMessage } from '../components/NotFoundMessage/NotFoundMessage';
 
-export const MoviePage = () => {
+export const NotFoundPage = () => {
   return (
     <Fragment>
       <Header>
@@ -17,12 +15,10 @@ export const MoviePage = () => {
         <Link to="/">
           <SearchBtn className="searchBtnSecondary" />
         </Link>
-        <MovieCardContainer />
       </Header>
       <main>
-        <GenresInfoContainer />
         <ContentWrapper>
-          <MoviesByGenreContainer />
+          <NotFoundMessage />
         </ContentWrapper>
       </main>
     </Fragment>

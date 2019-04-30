@@ -6,7 +6,7 @@ export class MovieQtyContainer extends PureComponent {
   render() {
     const { movieQty } = this.props;
 
-    return <div>{`${movieQty} movies found`}</div>;
+    return <div>{movieQty} movies found</div>;
   }
 }
 

@@ -19,3 +19,9 @@ export const SEARCH_FILTERS = [
     title: 'genre'
   }
 ];
+
+export const DEFAULT_FILTERS = {
+  searchBy: SEARCH_FILTERS[0].value,
+  sortBy: SORT_FILTERS[0].value,
+  search: ''
+};

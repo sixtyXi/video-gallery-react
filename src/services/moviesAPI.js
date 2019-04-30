@@ -1,16 +1,11 @@
+import queryString from 'query-string';
+
 const BASE_URL = 'https://reactjs-cdp.herokuapp.com/movies';
 
 const createQuery = params => {
-  const queries = [];
-  const entries = Object.entries(params);
+  const str = queryString.stringify(params);
 
-  entries.forEach(entry => {
-    if (entry[1]) {
-      queries.push(entry.join('='));
-    }
-  });
-
-  return queries.length ? `?${queries.join('&')}` : '';
+  return str ? `?${str}` : '';
 };
 
 const getMovies = (params = {}) => {

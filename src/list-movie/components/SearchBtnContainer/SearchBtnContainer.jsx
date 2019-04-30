@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { fetchMovieList } from '../../actions/actions';
-import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
+import { fetchMovieList } from '../../../actions/actions';
+import { SearchBtn } from '../../../components/SearchBtn/SearchBtn';
 
 export class SearchBtnContainer extends PureComponent {
   handleClick = () => {
+    this.props.pushUrl();
     this.props.getMovies();
   };
 
@@ -16,7 +17,8 @@ export class SearchBtnContainer extends PureComponent {
 }
 
 SearchBtnContainer.propTypes = {
-  getMovies: PropTypes.func.isRequired
+  getMovies: PropTypes.func.isRequired,
+  pushUrl: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({ getMovies: () => dispatch(fetchMovieList()) });
