@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import 'normalize.css';
 
 import './App.scss';
 import { MoviePage } from './movie/MoviePage/MoviePage';

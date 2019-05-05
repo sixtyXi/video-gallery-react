@@ -1,17 +1,18 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
+  context: path.resolve(__dirname, '../src'),
+  name: 'client',
+  target: 'web',
+  entry: {
+    main: ['./index.js']
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    filename: '[name].bundle.js',
+    path: path.resolve('./dist')
   },
   resolve: {
-    extensions: [ '.js', '.jsx' ]
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [
@@ -60,13 +61,5 @@ module.exports = {
         }
       }
     }
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'React Video Gallery',
-      hash: true,
-      template: 'index.html'
-    })
-  ]
+  }
 };

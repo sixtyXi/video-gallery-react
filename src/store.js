@@ -6,7 +6,8 @@ import storage from 'redux-persist/lib/storage';
 import rootReducer from './reducers/rootReducer';
 
 /* eslint-disable no-underscore-dangle */
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  (typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 /* eslint-enable */
 const persistConfig = {
   key: 'root',

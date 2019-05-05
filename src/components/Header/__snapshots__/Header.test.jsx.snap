@@ -4,5 +4,7 @@ exports[`Header renders correctly 1`] = `
 <header
   className="header"
   data-cy="header"
-/>
+>
+  <ContentWrapper />
+</header>
 `;
