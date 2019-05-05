@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { ErrorBondary } from './ErrorBoundary';
+import { ErrorBoundary } from './ErrorBoundary';
 
 const ErrorChild = () => {
   throw new Error('error message');
@@ -9,12 +9,12 @@ const ErrorChild = () => {
 
 describe('ErrorBoundary', () => {
   test('displays error message on error from children', () => {
-    const spy = jest.spyOn(ErrorBondary.prototype, 'componentDidCatch');
+    const spy = jest.spyOn(ErrorBoundary.prototype, 'componentDidCatch');
 
     mount(
-      <ErrorBondary>
+      <ErrorBoundary>
         <ErrorChild />
-      </ErrorBondary>
+      </ErrorBoundary>
     );
 
     expect(spy).toHaveBeenCalled();

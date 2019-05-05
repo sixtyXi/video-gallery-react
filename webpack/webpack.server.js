@@ -5,7 +5,7 @@ const common = require('./webpack.common');
 module.exports = merge.smart(common, {
   name: 'server',
   target: 'node',
-  mode: 'none',
+  mode: process.env.NODE_ENV,
   entry: './serverRenderer.js',
   externals: [nodeExternals()],
   output: {

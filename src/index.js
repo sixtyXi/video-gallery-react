@@ -1,6 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 
-ReactDOM.hydrate(<App />, document.getElementById('root'));
+const app = <App Router={BrowserRouter} />;
+
+hydrate(app, document.getElementById('root'));
