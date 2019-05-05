@@ -1,9 +1,11 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import App from './App';
 
-function renderHTML(html) {
+import App from './App';
+import configureStore from './configureStore';
+
+function renderHTML(html, preloadedState) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -15,13 +17,16 @@ function renderHTML(html) {
       ${
         process.env.NODE_ENV === 'development'
           ? ''
-          : '<link href="main.css" rel="stylesheet" type="text/css">'
+          : '<link rel="stylesheet" type="text/css" href="main.css">'
       }
-      <script src="vendor.bundle.js" defer></script>
-      <script src="main.bundle.js" defer></script>
     </head>
     <body>
       <div id="root">${html}</div>
+      <script>
+        window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+      </script>
+      <script src="vendor.bundle.js"></script>
+      <script src="main.bundle.js"></script>
     </body>
     </html>
   `;
@@ -29,20 +34,31 @@ function renderHTML(html) {
 
 export default function serverRenderer() {
   return (req, res) => {
+    const store = configureStore();
     const context = {};
 
-    const app = <App Router={StaticRouter} location={req.url} context={context} />;
-    const htmlString = renderToString(app);
+    const renderApp = () => (
+      <App Router={StaticRouter} location={req.url} context={context} store={store} />
+    );
 
-    if (context.url) {
-      res.writeHead(302, {
-        Location: context.url
-      });
+    store.runSaga().done.then(() => {
+      const htmlString = renderToString(renderApp());
 
-      res.end();
-      return;
-    }
+      if (context.url) {
+        res.writeHead(302, {
+          Location: context.url
+        });
 
-    res.send(renderHTML(htmlString));
+        res.end();
+        return;
+      }
+
+      const preloadedState = store.getState();
+
+      res.send(renderHTML(htmlString, preloadedState));
+    });
+
+    renderToString(renderApp());
+    store.close();
   };
 }

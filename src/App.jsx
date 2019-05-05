@@ -8,9 +8,9 @@ import ListMoviePageContainer from './list-movie/ListMoviePageContainer/ListMovi
 import { NotFoundPage } from './not-found/NotFoundPage/NotFoundPage';
 import { Decorator } from './containers/Decorator/Decorator';
 
-const App = ({ Router, location, context }) => {
+const App = ({ Router, location, context, store }) => {
   return (
-    <Decorator>
+    <Decorator store={store}>
       <Router location={location} context={context}>
         <Switch>
           <Route exact path="/" component={ListMoviePageContainer} />
@@ -28,7 +28,11 @@ App.propTypes = {
   location: PropTypes.string,
   context: PropTypes.shape({
     url: PropTypes.string
-  })
+  }),
+  store: PropTypes.shape({
+    dispatch: PropTypes.func.isRequired,
+    getState: PropTypes.func.isRequired
+  }).isRequired
 };
 
 App.defaultProps = {

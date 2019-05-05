@@ -7,7 +7,7 @@ import { MovieCard } from '../MovieCard/MovieCard';
 import { fetchMovie } from '../../../actions/actions';
 
 export class MovieCardContainer extends Component {
-  componentDidMount() {
+  componentWillMount() {
     const {
       getMovie,
       match: {
