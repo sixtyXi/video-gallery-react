@@ -17,7 +17,7 @@ function renderHTML(html, preloadedState) {
       ${
         process.env.NODE_ENV === 'development'
           ? ''
-          : '<link rel="stylesheet" type="text/css" href="main.css">'
+          : '<link rel="stylesheet" type="text/css" href="/main.css">'
       }
     </head>
     <body>
@@ -25,8 +25,8 @@ function renderHTML(html, preloadedState) {
       <script>
         window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
       </script>
-      <script src="vendor.bundle.js"></script>
-      <script src="main.bundle.js"></script>
+      <script src="/vendor.bundle.js"></script>
+      <script src="/main.bundle.js"></script>
     </body>
     </html>
   `;

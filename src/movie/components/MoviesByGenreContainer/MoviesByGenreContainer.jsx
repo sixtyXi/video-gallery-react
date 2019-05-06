@@ -27,6 +27,11 @@ const isEqualMovies = (arr1, arr2) => {
 };
 
 export class MoviesByGenreContainer extends Component {
+  componentWillMount() {
+    const { genres, getMoviesByGenre } = this.props;
+
+    getMoviesByGenre(genres);
+  }
 
   shouldComponentUpdate(nextProps) {
     const { movies, movie, getMoviesByGenre } = this.props;

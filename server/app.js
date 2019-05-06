@@ -1,5 +1,5 @@
+const path = require('path');
 const express = require('express');
-
 const app = express();
 
 if (process.env.NODE_ENV === 'development') {
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   const serverRenderer = require('../dist/serverRenderer').default;
 
-  app.use(express.static('dist'));
+  app.use(express.static(path.join(__dirname, '../dist')));
   app.use(serverRenderer());
 }
 

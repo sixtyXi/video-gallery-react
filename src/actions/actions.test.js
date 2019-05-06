@@ -1,27 +1,15 @@
 import configureMockStore from 'redux-mock-store';
-import createSagaMiddleware, { END } from 'redux-saga';
-import nock from 'nock';
-import fetch from 'isomorphic-fetch';
 
 import { MOVIES } from '../shared/moviesMock';
 import { SEARCH_FILTERS, SORT_FILTERS } from '../shared/filtersMock';
 import { initialState as movieList } from '../reducers/movieList';
 import { initialState as movie } from '../reducers/moviePage';
 
-import {
-  setMovieList,
-  setSearchBy,
-  setSortBy,
-  setSearch,
-  setMovie,
-  fetchMovieList,
-  fetchMovie
-} from './actions';
+import { setMovieList, setSearchBy, setSortBy, setSearch, setMovie } from './actions';
 
 let mockStore;
 let store;
 
-const BASE_URL = 'https://localhost:8000';
 const INITIAL_STATE = {
   movieList,
   movie
