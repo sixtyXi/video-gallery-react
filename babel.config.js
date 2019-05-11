@@ -17,7 +17,7 @@ module.exports = function(api) {
     ],
     '@babel/preset-react'
   ];
-  const plugins = ['@babel/plugin-proposal-class-properties'];
+  const plugins = ['@babel/plugin-proposal-class-properties', '@loadable/babel-plugin'];
 
   return {
     presets,

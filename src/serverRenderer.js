@@ -1,9 +1,14 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
+import { ChunkExtractor } from '@loadable/server';
 
 import App from './App';
 import configureStore from './configureStore';
+
+const path = require('path');
+
+const statsFile = path.resolve('./dist/loadable-stats.json');
 
 function renderHTML(html, preloadedState) {
   return `
@@ -36,10 +41,12 @@ export default function serverRenderer() {
   return (req, res) => {
     const store = configureStore();
     const context = {};
+    const extractor = new ChunkExtractor({ statsFile });
 
-    const renderApp = () => (
-      <App Router={StaticRouter} location={req.url} context={context} store={store} />
-    );
+    const renderApp = () =>
+      extractor.collectChunks(
+        <App Router={StaticRouter} location={req.url} context={context} store={store} />
+      );
 
     store.runSaga().done.then(() => {
       const htmlString = renderToString(renderApp());

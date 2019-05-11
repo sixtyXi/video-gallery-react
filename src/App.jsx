@@ -1,20 +1,24 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import loadable from '@loadable/component';
 
 import './App.scss';
-import { MoviePage } from './movie/MoviePage/MoviePage';
-import ListMoviePageContainer from './list-movie/ListMoviePageContainer/ListMoviePageContainer';
-import { NotFoundPage } from './not-found/NotFoundPage/NotFoundPage';
 import { Decorator } from './containers/Decorator/Decorator';
+
+const ListMoviePage = loadable(() =>
+  import('./list-movie/ListMoviePageContainer/ListMoviePageContainer')
+);
+const MoviePage = loadable(() => import('./movie/MoviePage/MoviePage'));
+const NotFoundPage = loadable(() => import('./not-found/NotFoundPage/NotFoundPage'));
 
 const App = ({ Router, location, context, store }) => {
   return (
     <Decorator store={store}>
       <Router location={location} context={context}>
         <Switch>
-          <Route exact path="/" component={ListMoviePageContainer} />
-          <Route path="/search" component={ListMoviePageContainer} />
+          <Route exact path="/" component={ListMoviePage} />
+          <Route path="/search" component={ListMoviePage} />
           <Route exact path="/film/:id" component={MoviePage} />
           <Route path="*" component={NotFoundPage} />
         </Switch>

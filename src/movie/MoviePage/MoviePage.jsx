@@ -9,7 +9,7 @@ import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
 import MovieCardContainer from '../components/MovieCardContainer/MovieCardContainer';
 import GenresInfoContainer from '../components/GenresInfoContainer/GenresInfoContainer';
 
-export const MoviePage = () => {
+const MoviePage = () => {
   return (
     <Fragment>
       <Header>
@@ -28,3 +28,5 @@ export const MoviePage = () => {
     </Fragment>
   );
 };
+
+export default MoviePage;

@@ -7,7 +7,7 @@ import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
 import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
 import { NotFoundMessage } from '../components/NotFoundMessage/NotFoundMessage';
 
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   return (
     <Fragment>
       <Header>
@@ -24,3 +24,5 @@ export const NotFoundPage = () => {
     </Fragment>
   );
 };
+
+export default NotFoundPage;

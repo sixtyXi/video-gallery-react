@@ -1,4 +1,5 @@
 const path = require('path');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, '../src'),
@@ -10,7 +11,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve('./dist'),
-    publicPath: '/dist'
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -62,5 +63,7 @@ module.exports = {
         }
       }
     }
-  }
+  },
+
+  plugins: [new LoadablePlugin()]
 };
