@@ -16,7 +16,7 @@ import {
 import { SORT_FILTERS, SEARCH_FILTERS, DEFAULT_FILTERS } from '../../shared/filtersMock';
 
 export class ListMoviePageContainer extends Component {
-  componentDidMount() {
+  componentWillMount() {
     const { getMovies } = this.props;
 
     const filtersUpdated = this.updateFilters(this.props);

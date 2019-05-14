@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class ErrorBondary extends Component {
+export class ErrorBoundary extends Component {
   static logError(error, info) {
     console.warn(error);
     console.warn(info);
@@ -16,7 +16,7 @@ export class ErrorBondary extends Component {
 
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
-    ErrorBondary.logError(error, info);
+    ErrorBoundary.logError(error, info);
   }
 
   render() {
@@ -31,6 +31,6 @@ export class ErrorBondary extends Component {
   }
 }
 
-ErrorBondary.propTypes = {
+ErrorBoundary.propTypes = {
   children: PropTypes.element.isRequired
 };

@@ -1,5 +1,5 @@
 import queryString from 'query-string';
-
+import fetch from 'isomorphic-fetch';
 const BASE_URL = 'https://reactjs-cdp.herokuapp.com/movies';
 
 const createQuery = params => {

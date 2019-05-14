@@ -1,23 +1,23 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
 import PropTypes from 'prop-types';
 
-import { ErrorBondary } from '../../components/ErrorBoundary/ErrorBoundary';
-import { store, persistor } from '../../store';
+import { ErrorBoundary } from '../../components/ErrorBoundary/ErrorBoundary';
 import { Footer } from '../../components/Footer/Footer';
 
-export const Decorator = ({ children }) => {
+export const Decorator = ({ store, children }) => {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ErrorBondary>{children}</ErrorBondary>
-        <Footer />
-      </PersistGate>
+      <ErrorBoundary>{children}</ErrorBoundary>
+      <Footer />
     </Provider>
   );
 };
 
 Decorator.propTypes = {
+  store: PropTypes.shape({
+    dispatch: PropTypes.func.isRequired,
+    getState: PropTypes.func.isRequired
+  }).isRequired,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 };

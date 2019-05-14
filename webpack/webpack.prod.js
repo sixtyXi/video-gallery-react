@@ -1,7 +1,7 @@
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const common = require('./webpack.common');
 
@@ -12,7 +12,7 @@ module.exports = merge.strategy({ 'module.rules': 'prepend' })(common, {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [ MiniCssExtractPlugin.loader ]
+        use: [MiniCssExtractPlugin.loader]
       }
     ]
   },
@@ -25,10 +25,8 @@ module.exports = merge.strategy({ 'module.rules': 'prepend' })(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css'
+      filename: '[name].css'
     }),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'production'
-    })
+    new CleanWebpackPlugin()
   ]
 });
