@@ -14,7 +14,6 @@ describe('Home page', () => {
 
   describe('Logo element', () => {
     it('header should contains logo', () => {
-
       cy.visit(BASE_URL);
       cy.get('[data-cy=header] [data-cy=logo]').should('be.visible');
     });
@@ -22,7 +21,6 @@ describe('Home page', () => {
 
   describe('Movie Thumb', () => {
     it('should contains movie thumbs', () => {
-
       cy.visit(BASE_URL);
       cy.get('[data-cy=movieThumb]').should('be.visible');
     });

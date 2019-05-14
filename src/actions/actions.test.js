@@ -8,6 +8,7 @@ import { initialState as movie } from '../reducers/moviePage';
 import { setMovieList, setSearchBy, setSortBy, setSearch, setMovie } from './actions';
 
 let mockStore;
+
 let store;
 
 const INITIAL_STATE = {
