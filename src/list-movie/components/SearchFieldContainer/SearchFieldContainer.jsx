@@ -1,17 +1,25 @@
+// @flow
+
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import styles from './SearchFieldContainer.scss';
 import { setSearch, fetchMovieList } from '../../../actions/actions';
 
-export class SearchFieldContainer extends Component {
-  handleChange = event => {
-    this.props.setSearchValue(event.target.value);
+type Props = {
+  searchTxt: string,
+  setSearchValue: Function,
+  getMovies: Function,
+  pushUrl: Function
+};
+
+export class SearchFieldContainer extends Component<Props> {
+  handleChange = (event: SyntheticEvent<HTMLInputElement>) => {
+    this.props.setSearchValue(event.currentTarget.value);
   };
 
-  handleKeyDown = event => {
+  handleKeyDown = (event: SyntheticKeyboardEvent<>) => {
     if (event.keyCode === 13) {
       event.preventDefault();
       this.props.pushUrl();
@@ -36,13 +44,6 @@ export class SearchFieldContainer extends Component {
     );
   }
 }
-
-SearchFieldContainer.propTypes = {
-  searchTxt: PropTypes.string.isRequired,
-  setSearchValue: PropTypes.func.isRequired,
-  getMovies: PropTypes.func.isRequired,
-  pushUrl: PropTypes.func.isRequired
-};
 
 const mapStateToProps = state => ({ searchTxt: state.movieList.search });
 const mapDispatchToProps = dispatch => ({

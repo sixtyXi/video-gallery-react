@@ -1,12 +1,23 @@
+// @flow
+
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { MovieList } from '../../components/MovieList/MovieList';
 import { SORT_FILTERS } from '../../shared/filtersMock';
+import type { Movie } from '../../shared/types';
 
-export class MovieListContainer extends Component {
-  getSortedMovies = () => {
+type Props = {
+  movies: Array<Movie>,
+  sortBy: string
+};
+
+export class MovieListContainer extends Component<Props> {
+  static defaultProps = {
+    movies: []
+  };
+
+  getSortedMovies = (): Array<Movie> => {
     const { movies, sortBy } = this.props;
 
     switch (sortBy) {
@@ -25,15 +36,6 @@ export class MovieListContainer extends Component {
     return <MovieList movies={this.getSortedMovies()} />;
   }
 }
-
-MovieListContainer.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.object),
-  sortBy: PropTypes.string.isRequired
-};
-
-MovieListContainer.defaultProps = {
-  movies: []
-};
 
 const mapStateToProps = state => ({
   movies: state.movieList.movies,

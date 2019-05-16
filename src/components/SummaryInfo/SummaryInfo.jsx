@@ -1,19 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+
+import * as React from 'react';
 
 import styles from './SummaryInfo.scss';
 import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
 
-export const SummaryInfo = ({ children }) => {
+export const SummaryInfo = ({ children }: { children: React.Node | null }) => {
   return (
     <div className={styles.summaryWrapper}>
       <ContentWrapper>{children}</ContentWrapper>
     </div>
   );
-};
-
-SummaryInfo.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };
 
 SummaryInfo.defaultProps = {

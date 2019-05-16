@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import styles from './ContentWrapper.scss';
 
-export const ContentWrapper = ({ children }) => {
-  return <section className={styles.contentWrapper}>{children}</section>;
+type Props = {
+  children: React.Node | null
 };
 
-ContentWrapper.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+export const ContentWrapper = ({ children }: Props) => {
+  return <section className={styles.contentWrapper}>{children}</section>;
 };
 
 ContentWrapper.defaultProps = {

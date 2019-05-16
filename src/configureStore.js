@@ -1,7 +1,10 @@
+// @flow
+
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware, { END } from 'redux-saga';
 
 import { rootReducer, rootSaga } from './reducers/rootReducer';
+import type { State } from './reducers/rootReducer';
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers =
@@ -10,7 +13,12 @@ const composeEnhancers =
 
 const sagaMiddleware = createSagaMiddleware();
 
-export default initialState => {
+export type Store = {
+  dispatch: Function,
+  getState: Function
+};
+
+export default (initialState: State) => {
   const store = createStore(
     rootReducer,
     initialState,

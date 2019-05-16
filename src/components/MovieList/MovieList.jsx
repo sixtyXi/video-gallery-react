@@ -1,10 +1,12 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './MovieList.scss';
 import { MovieThumb } from '../MovieThumb/MovieThumb';
+import type { Movie } from '../../shared/types';
 
-export const MovieList = ({ movies }) => {
+export const MovieList = ({ movies }: { movies: Array<Movie> }) => {
   return movies.length ? (
     <div className={styles.listWrapper}>
       {movies.map(movie => (
@@ -14,10 +16,6 @@ export const MovieList = ({ movies }) => {
   ) : (
     <p className={styles.emptyResult}>No films found</p>
   );
-};
-
-MovieList.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.object)
 };
 
 MovieList.defaultProps = {

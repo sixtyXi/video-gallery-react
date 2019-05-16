@@ -1,3 +1,5 @@
+// @flow
+
 import {
   SET_MOVIE_LIST,
   SET_SEARCH_BY,
@@ -7,12 +9,18 @@ import {
 } from '../actions/actions';
 import { DEFAULT_FILTERS } from '../shared/filtersMock';
 
-export const initialState = {
+import type { Movie, MovieFilters } from '../shared/types';
+
+export type MovieListState = MovieFilters & {
+  movies: Array<Movie>
+};
+
+export const initialState: MovieListState = {
   movies: [],
   ...DEFAULT_FILTERS
 };
 
-export const movieList = (state = initialState, action) => {
+export const movieList = (state: MovieListState = initialState, action: Function) => {
   switch (action.type) {
     case SET_MOVIE_LIST:
       return {

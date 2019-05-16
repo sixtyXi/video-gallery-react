@@ -1,12 +1,32 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { withRouter, Redirect } from 'react-router-dom';
 
 import { MovieCard } from '../MovieCard/MovieCard';
 import { fetchMovie } from '../../../actions/actions';
 
-export class MovieCardContainer extends Component {
+import type { Movie, Location } from '../../../shared/types';
+
+type RouterMatch = {
+  params: {
+    id: string
+  }
+};
+
+type Props = {
+  movie: Movie,
+  getMovie: Function,
+  match: RouterMatch,
+  location: Location
+};
+
+export class MovieCardContainer extends Component<Props> {
+  static defaultProps = {
+    movie: null
+  };
+
   componentWillMount() {
     const {
       getMovie,
@@ -18,7 +38,7 @@ export class MovieCardContainer extends Component {
     getMovie(id);
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps: Props) {
     const { location, movie, getMovie } = this.props;
     const id = movie ? movie.id : '';
 
@@ -39,32 +59,6 @@ export class MovieCardContainer extends Component {
     return null;
   }
 }
-
-MovieCardContainer.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    poster_path: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    vote_average: PropTypes.number.isRequired,
-    tagline: PropTypes.string.isRequired,
-    release_date: PropTypes.string.isRequired,
-    runtime: PropTypes.number,
-    overview: PropTypes.string.isRequired
-  }),
-  getMovie: PropTypes.func.isRequired,
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string
-    })
-  }).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string
-  }).isRequired
-};
-
-MovieCardContainer.defaultProps = {
-  movie: null
-};
 
 const mapStateToProps = state => ({
   movie: state.moviePage.movie

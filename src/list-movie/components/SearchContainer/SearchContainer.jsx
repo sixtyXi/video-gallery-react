@@ -1,16 +1,28 @@
+// @flow
+
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
-import PropTypes from 'prop-types';
 
 import styles from './SearchContainer.scss';
 
-import SearchBtnContainer from '../SearchBtnContainer/SearchBtnContainer';
-import SearchFieldContainer from '../SearchFieldContainer/SearchFieldContainer';
-import SearchFilterContainer from '../SearchFilterContainer/SearchFilterContainer';
+import ConnectedSearchBtnContainer from '../SearchBtnContainer/SearchBtnContainer';
+import ConnectedSearchFieldContainer from '../SearchFieldContainer/SearchFieldContainer';
+import ConnectedSearchFilterContainer from '../SearchFilterContainer/SearchFilterContainer';
 
-export class SearchContainer extends Component {
+type History = {
+  push: Function
+};
+
+type Props = {
+  search: string,
+  searchBy: string,
+  sortBy: string,
+  history: History
+};
+
+export class SearchContainer extends Component<Props> {
   pushSearchUrl = () => {
     const { search, searchBy, sortBy, history } = this.props;
 
@@ -22,24 +34,15 @@ export class SearchContainer extends Component {
       <form className={styles.searchWrapper}>
         <h1 className={styles.pageTitle}>Find your movie</h1>
 
-        <SearchFieldContainer pushUrl={this.pushSearchUrl} />
+        <ConnectedSearchFieldContainer pushUrl={this.pushSearchUrl} />
 
-        <SearchFilterContainer />
+        <ConnectedSearchFilterContainer />
 
-        <SearchBtnContainer pushUrl={this.pushSearchUrl} />
+        <ConnectedSearchBtnContainer pushUrl={this.pushSearchUrl} />
       </form>
     );
   }
 }
-
-SearchContainer.propTypes = {
-  search: PropTypes.string.isRequired,
-  searchBy: PropTypes.string.isRequired,
-  sortBy: PropTypes.string.isRequired,
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired
-  }).isRequired
-};
 
 const mapStateToProps = state => ({
   search: state.movieList.search,

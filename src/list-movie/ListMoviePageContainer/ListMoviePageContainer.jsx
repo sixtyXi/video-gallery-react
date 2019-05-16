@@ -1,5 +1,6 @@
+// @flow
+
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
@@ -14,8 +15,20 @@ import {
   setInitialState
 } from '../../actions/actions';
 import { SORT_FILTERS, SEARCH_FILTERS, DEFAULT_FILTERS } from '../../shared/filtersMock';
+import type { Filter, Location } from '../../shared/types';
 
-export class ListMoviePageContainer extends Component {
+type Props = {
+  getMovies: Function,
+  /* eslint-disable react/no-unused-prop-types */
+  location: Location,
+  setSearchValue: Function,
+  setSearchFilter: Function,
+  setSortFilter: Function,
+  setDefaultState: Function
+  /* eslint-enable react/no-unused-prop-types */
+};
+
+export class ListMoviePageContainer extends Component<Props> {
   componentWillMount() {
     const { getMovies } = this.props;
 
@@ -26,13 +39,14 @@ export class ListMoviePageContainer extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps: Props) {
     const filtersUpdated = this.updateFilters(nextProps);
+    const { getMovies } = this.props;
 
-    return filtersUpdated && this.props.getMovies();
+    return filtersUpdated && getMovies();
   }
 
-  updateFilters = props => {
+  updateFilters = (props: Props) => {
     const {
       location: { search },
       setDefaultState
@@ -42,7 +56,10 @@ export class ListMoviePageContainer extends Component {
 
     if (search) {
       const parsed = queryString.parse(search);
-      const searchEntries = Object.entries({ ...DEFAULT_FILTERS, ...parsed });
+      const searchEntries: Array<[string, mixed]> = Object.entries({
+        ...DEFAULT_FILTERS,
+        ...parsed
+      });
 
       filtersUpdated = this.dispatchFiltersValue(searchEntries, props);
     } else {
@@ -52,7 +69,7 @@ export class ListMoviePageContainer extends Component {
     return filtersUpdated;
   };
 
-  dispatchFiltersValue = (filterEntries, props) => {
+  dispatchFiltersValue = (filterEntries: Array<[string, mixed]>, props: Props) => {
     const { setSearchValue, setSearchFilter, setSortFilter } = props;
 
     let filtersUpdated = false;
@@ -85,7 +102,7 @@ export class ListMoviePageContainer extends Component {
     return filtersUpdated;
   };
 
-  isValidFilterValue = (filterValue, filters) => {
+  isValidFilterValue = (filterValue: mixed, filters: Array<Filter>) => {
     return filters.some(filter => filter.value === filterValue);
   };
 
@@ -93,17 +110,6 @@ export class ListMoviePageContainer extends Component {
     return <ListMoviePage />;
   }
 }
-
-ListMoviePageContainer.propTypes = {
-  getMovies: PropTypes.func.isRequired,
-  setSearchValue: PropTypes.func.isRequired,
-  setSearchFilter: PropTypes.func.isRequired,
-  setSortFilter: PropTypes.func.isRequired,
-  setDefaultState: PropTypes.func.isRequired,
-  location: PropTypes.shape({
-    search: PropTypes.string
-  }).isRequired
-};
 
 const mapDispatchToProps = dispatch => ({
   getMovies: () => dispatch(fetchMovieList()),

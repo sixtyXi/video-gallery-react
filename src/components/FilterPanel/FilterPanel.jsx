@@ -1,12 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import styles from './FilterPanel.scss';
 import { FilterItem } from './FilterItem/FilterItem';
+import type { FilterType } from './FilterItem/FilterItem';
+import type { Filter } from '../../shared/types';
 
-export const FilterPanel = ({ filters, activeFilter, name, handleChange, type, title }) => {
+type Props = {
+  filters: Array<Filter>,
+  activeFilter: string,
+  name: string,
+  handleChange: Function,
+  type: FilterType,
+  title: string
+};
+
+export const FilterPanel = ({
+  filters,
+  activeFilter,
+  name,
+  handleChange,
+  type,
+  title
+}: Props): React.Node => {
   const filterItems = filters.map(filter => {
-    const isChecked = activeFilter === filter.value;
+    const isChecked: boolean = activeFilter === filter.value;
 
     return (
       <FilterItem
@@ -27,15 +45,6 @@ export const FilterPanel = ({ filters, activeFilter, name, handleChange, type, t
       {filterItems}
     </div>
   ) : null;
-};
-
-FilterPanel.propTypes = {
-  filters: PropTypes.arrayOf(PropTypes.object),
-  activeFilter: PropTypes.string,
-  name: PropTypes.string,
-  handleChange: PropTypes.func,
-  type: PropTypes.oneOf(['btn', 'label']),
-  title: PropTypes.string
 };
 
 FilterPanel.defaultProps = {

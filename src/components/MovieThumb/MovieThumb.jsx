@@ -1,14 +1,16 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import styles from './MovieThumb.scss';
 import { mapGenres } from '../../utils/utils';
+import type { Movie } from '../../shared/types';
 
-export const MovieThumb = ({ movie }) => {
+export const MovieThumb = ({ movie }: { movie: Movie }) => {
   if (!movie) return null;
 
-  const { genres = [], poster_path: posterPath, title, release_date: releaseDate, id } = movie;
+  const { genres, poster_path: posterPath, title, release_date: releaseDate, id } = movie;
 
   return (
     <Link to={`/film/${id}`} style={{ textDecoration: 'none' }}>
@@ -24,12 +26,8 @@ export const MovieThumb = ({ movie }) => {
   );
 };
 
-MovieThumb.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    poster_path: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    genres: PropTypes.arrayOf(PropTypes.string),
-    release_date: PropTypes.string
-  }).isRequired
+MovieThumb.defaultProps = {
+  movie: {
+    genres: []
+  }
 };

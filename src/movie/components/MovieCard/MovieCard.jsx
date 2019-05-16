@@ -1,9 +1,12 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './MovieCard.scss';
 
-export const MovieCard = ({ movie }) => {
+import type { Movie } from '../../../shared/types';
+
+export const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
     <article className={styles.wrapper}>
       <img className={styles.poster} src={movie.poster_path} alt={`Poster of ${movie.title}`} />
@@ -19,13 +22,3 @@ export const MovieCard = ({ movie }) => {
     </article>
   );
 };
-
-MovieCard.propTypes = PropTypes.shape({
-  poster_path: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  vote_average: PropTypes.number.isRequired,
-  tagline: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-  runtime: PropTypes.number.isRequired,
-  overview: PropTypes.string.isRequired
-}).isRequired;

@@ -1,9 +1,12 @@
+// @flow
+
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { MovieList } from '../../../components/MovieList/MovieList';
 import { fetchMovieListByGenre } from '../../../actions/actions';
+
+import type { Movie } from '../../../shared/types';
 
 const isEqualGenre = (arr1, arr2) => {
   if (arr1.length !== arr2.length) return false;
@@ -11,8 +14,8 @@ const isEqualGenre = (arr1, arr2) => {
   return arr1.sort().join() === arr2.sort().join();
 };
 
-const mapMoviesToComparableString = movies => {
-  const ids = movies.map(movie => movie.id);
+const mapMoviesToComparableString = (movies: Array<Movie>) => {
+  const ids = movies.map(movie => +movie.id);
 
   return ids.sort((first, second) => first - second).join();
 };
@@ -26,14 +29,27 @@ const isEqualMovies = (arr1, arr2) => {
   return first === second;
 };
 
-export class MoviesByGenreContainer extends Component {
+type Props = {
+  movies: Array<Movie>,
+  genres: Array<string>,
+  movie: Movie,
+  getMoviesByGenre: Function
+};
+
+export class MoviesByGenreContainer extends Component<Props> {
+  static defaultProps = {
+    movies: [],
+    genres: [],
+    movie: null
+  };
+
   componentWillMount() {
     const { genres, getMoviesByGenre } = this.props;
 
     getMoviesByGenre(genres);
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps: Props) {
     const { movies, movie, getMoviesByGenre } = this.props;
     const { movies: nextMovies, movie: nextMovie } = nextProps;
 
@@ -52,7 +68,7 @@ export class MoviesByGenreContainer extends Component {
     return shouldUpdate;
   }
 
-  getFilteredMovies = (movies, movie) => {
+  getFilteredMovies = (movies: Array<Movie>, movie: Movie): Array<Movie> => {
     return movie ? movies.filter(el => el.id !== movie.id) : movies;
   };
 
@@ -62,21 +78,6 @@ export class MoviesByGenreContainer extends Component {
     return <MovieList movies={this.getFilteredMovies(movies, movie)} />;
   }
 }
-
-MoviesByGenreContainer.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.object),
-  genres: PropTypes.arrayOf(PropTypes.string),
-  movie: PropTypes.shape({
-    id: PropTypes.number
-  }),
-  getMoviesByGenre: PropTypes.func.isRequired
-};
-
-MoviesByGenreContainer.defaultProps = {
-  movies: [],
-  genres: [],
-  movie: null
-};
 
 const mapStateToProps = state => ({
   movies: state.moviePage.movies,

@@ -1,20 +1,29 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-export class ErrorBoundary extends Component {
-  static logError(error, info) {
+import * as React from 'react';
+
+type Props = {
+  children: React.Node
+};
+
+type State = {
+  hasError: boolean
+};
+
+export class ErrorBoundary extends React.Component<Props, State> {
+  static logError(error: Error, info: Object) {
     console.warn(error);
     console.warn(info);
   }
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       hasError: false
     };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: Error, info: Object) {
     this.setState({ hasError: true });
     ErrorBoundary.logError(error, info);
   }
@@ -30,7 +39,3 @@ export class ErrorBoundary extends Component {
     return children;
   }
 }
-
-ErrorBoundary.propTypes = {
-  children: PropTypes.element.isRequired
-};

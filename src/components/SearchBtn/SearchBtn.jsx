@@ -1,23 +1,26 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './SearchBtn.scss';
 
-export const SearchBtn = ({ className, handleClick }) => {
+type BtnClassName = 'searchBtnPrimary' | 'searchBtnSecondary';
+
+type Props = {
+  className: BtnClassName,
+  handleClick: Function
+};
+
+export const SearchBtn = ({ className, handleClick }: Props) => {
   return (
     <button
       onClick={handleClick}
       className={`${styles.searchBtn} ${styles[className]}`}
       type="button"
     >
-      Search
+      {'Search'}
     </button>
   );
-};
-
-SearchBtn.propTypes = {
-  className: PropTypes.oneOf(['searchBtnPrimary', 'searchBtnSecondary']),
-  handleClick: PropTypes.func
 };
 
 SearchBtn.defaultProps = {
