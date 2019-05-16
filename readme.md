@@ -9,3 +9,4 @@
 - Coverage `npm run test:coverage`
 - E2E testing `npm run e2e`
 - ESLint `npm run lint`
+- Type checking by Flow `npm run flow`
