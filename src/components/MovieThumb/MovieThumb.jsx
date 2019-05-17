@@ -10,7 +10,7 @@ import type { Movie } from '../../shared/types';
 export const MovieThumb = ({ movie }: { movie: Movie }) => {
   if (!movie) return null;
 
-  const { genres, poster_path: posterPath, title, release_date: releaseDate, id } = movie;
+  const { genres = [], poster_path: posterPath, title, release_date: releaseDate, id } = movie;
 
   return (
     <Link to={`/film/${id}`} style={{ textDecoration: 'none' }}>
@@ -24,10 +24,4 @@ export const MovieThumb = ({ movie }: { movie: Movie }) => {
       </article>
     </Link>
   );
-};
-
-MovieThumb.defaultProps = {
-  movie: {
-    genres: []
-  }
 };
