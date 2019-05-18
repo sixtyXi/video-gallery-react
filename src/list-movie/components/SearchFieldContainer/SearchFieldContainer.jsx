@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import styles from './SearchFieldContainer.scss';
 import { setSearch, fetchMovieList } from '../../../actions/actions';
+import { SearchField } from '../SearchField/SearchField';
 
 type Props = {
   searchTxt: string,
@@ -31,16 +31,11 @@ export class SearchFieldContainer extends Component<Props> {
     const { searchTxt } = this.props;
 
     return (
-      <div className={styles.searchField}>
-        <input
-          data-cy="searchField"
-          type="text"
-          value={searchTxt}
-          id="search"
-          onChange={this.handleChange}
-          onKeyDown={this.handleKeyDown}
-        />
-      </div>
+      <SearchField
+        searchValue={searchTxt}
+        handleChange={this.handleChange}
+        handleKeyDown={this.handleKeyDown}
+      />
     );
   }
 }
