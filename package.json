@@ -11,7 +11,9 @@
     "prod": "cross-env NODE_ENV=production node ./server",
     "e2e": "concurrently \"npm start\" \"cypress open\"",
     "lint": "eslint --cache ./ --ignore-path .gitignore --fix",
-    "flow": "flow"
+    "flow": "flow",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -71,7 +73,11 @@
     "webpack-hot-middleware": "^2.24.4",
     "webpack-hot-server-middleware": "^0.6.0",
     "webpack-merge": "^4.2.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "@storybook/react": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11"
   },
   "dependencies": {
     "@loadable/component": "^5.9.0",
