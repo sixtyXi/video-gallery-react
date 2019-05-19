@@ -1,11 +1,11 @@
 // @flow
 
 import React from 'react';
-import type { Map } from 'immutable';
+import type { Movie } from '../../../shared/types';
 
 import styles from './MovieCard.scss';
 
-export const MovieCard = ({ movie }: { movie: Map<string, any> }) => {
+export const MovieCard = ({ movie }: { movie: Movie }) => {
   const {
     poster_path: posterPath,
     title,
@@ -14,7 +14,7 @@ export const MovieCard = ({ movie }: { movie: Map<string, any> }) => {
     release_date: releaseDate,
     runtime,
     overview
-  } = movie.toJS();
+  } = movie;
 
   return (
     <article className={styles.wrapper}>

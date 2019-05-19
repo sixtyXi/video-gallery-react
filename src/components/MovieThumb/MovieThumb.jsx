@@ -2,21 +2,15 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import type { Map } from 'immutable';
+import type { Movie } from '../../shared/types';
 
 import styles from './MovieThumb.scss';
 import { mapGenres } from '../../utils/utils';
 
-export const MovieThumb = ({ movie }: { movie: Map<string, any> }) => {
+export const MovieThumb = ({ movie }: { movie: Movie }) => {
   if (!movie) return null;
 
-  const {
-    genres = [],
-    poster_path: posterPath,
-    title,
-    release_date: releaseDate,
-    id
-  } = movie.toJS();
+  const { genres = [], poster_path: posterPath, title, release_date: releaseDate, id } = movie;
 
   return (
     <Link to={`/film/${id}`} style={{ textDecoration: 'none' }}>

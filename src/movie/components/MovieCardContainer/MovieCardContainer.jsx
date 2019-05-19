@@ -9,7 +9,7 @@ import { MovieCard } from '../MovieCard/MovieCard';
 import { fetchMovie } from '../../../actions/actions';
 import { getMovieSelector } from '../../../selectors';
 
-import type { Movie, Location } from '../../../shared/types';
+import type { Location } from '../../../shared/types';
 
 type RouterMatch = {
   params: {
@@ -54,7 +54,7 @@ export class MovieCardContainer extends Component<Props> {
   render() {
     const { movie } = this.props;
 
-    return movie ? <MovieCard movie={movie} /> : null;
+    return movie ? <MovieCard movie={movie.toJS()} /> : null;
   }
 }
 

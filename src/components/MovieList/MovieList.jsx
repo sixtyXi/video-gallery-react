@@ -7,10 +7,10 @@ import styles from './MovieList.scss';
 import { MovieThumb } from '../MovieThumb/MovieThumb';
 
 export const MovieList = ({ movies }: { movies: IndexedCollection<Map<string, any>> }) => {
-  return movies.size ? (
+  return !movies.isEmpty() ? (
     <div className={styles.listWrapper}>
       {movies.map(movie => (
-        <MovieThumb key={movie.get('id')} movie={movie} />
+        <MovieThumb key={movie.get('id')} movie={movie.toJS()} />
       ))}
     </div>
   ) : (
