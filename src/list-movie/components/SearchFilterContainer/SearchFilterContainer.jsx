@@ -35,7 +35,7 @@ export class SearchFilterContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({ currentFilter: state.movieList.searchBy });
+const mapStateToProps = state => ({ currentFilter: state.getIn(['movieList', 'searchBy']) });
 const mapDispatchToProps = dispatch => ({
   setFilterValue: filterValue => dispatch(setSearchBy(filterValue))
 });

@@ -45,9 +45,9 @@ export class SearchContainer extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  search: state.movieList.search,
-  searchBy: state.movieList.searchBy,
-  sortBy: state.movieList.sortBy
+  search: state.getIn(['movieList', 'search']),
+  searchBy: state.getIn(['movieList', 'searchBy']),
+  sortBy: state.getIn(['movieList', 'sortBy'])
 });
 
 export default withRouter(connect(mapStateToProps)(SearchContainer));

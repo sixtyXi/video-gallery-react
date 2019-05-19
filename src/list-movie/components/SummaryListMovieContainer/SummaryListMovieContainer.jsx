@@ -17,6 +17,8 @@ export const SummaryListMovieContainer = ({ moviesQty }: { moviesQty: number }) 
   ) : null;
 };
 
-export const mapStateToProps = (state: State) => ({ moviesQty: state.movieList.movies.length });
+export const mapStateToProps = (state: State) => ({
+  moviesQty: state.getIn(['movieList', 'movies']).size
+});
 
 export default connect(mapStateToProps)(SummaryListMovieContainer);

@@ -67,7 +67,10 @@ export const fetchMovie = id => {
 
 // Sagas
 export function* fetchMovieListAsync() {
-  const { searchBy, sortBy, search } = yield select(state => state.movieList);
+  const movieListState = yield select(state => state.get('movieList'));
+  const searchBy = movieListState.get('searchBy');
+  const sortBy = movieListState.get('sortBy');
+  const search = movieListState.get('search');
   const movies = yield call([moviesAPI, 'getMovies'], { searchBy, sortBy, search });
 
   yield put(setMovieList(movies));

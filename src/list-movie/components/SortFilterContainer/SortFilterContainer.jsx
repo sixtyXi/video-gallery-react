@@ -35,7 +35,7 @@ export class SortFilterContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({ currentFilter: state.movieList.sortBy });
+const mapStateToProps = state => ({ currentFilter: state.getIn(['movieList', 'sortBy']) });
 const mapDispatchToProps = dispatch => ({
   setFilterValue: filterValue => dispatch(setSortBy(filterValue))
 });

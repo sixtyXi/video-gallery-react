@@ -1,16 +1,16 @@
 // @flow
 
 import React from 'react';
+import type { IndexedCollection, Map } from 'immutable';
 
 import styles from './MovieList.scss';
 import { MovieThumb } from '../MovieThumb/MovieThumb';
-import type { Movie } from '../../shared/types';
 
-export const MovieList = ({ movies }: { movies: Array<Movie> }) => {
-  return movies.length ? (
+export const MovieList = ({ movies }: { movies: IndexedCollection<Map<string, any>> }) => {
+  return movies.size ? (
     <div className={styles.listWrapper}>
       {movies.map(movie => (
-        <MovieThumb key={movie.id} movie={movie} />
+        <MovieThumb key={movie.get('id')} movie={movie} />
       ))}
     </div>
   ) : (

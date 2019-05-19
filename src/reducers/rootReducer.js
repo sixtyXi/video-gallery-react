@@ -1,6 +1,6 @@
 // @flow
 
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import { all } from 'redux-saga/effects';
 
 import type { Saga } from 'redux-saga';

@@ -2,12 +2,13 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import type { IndexedCollection } from 'immutable';
 
 import { mapGenres } from '../../../utils/utils';
 import { SummaryInfo } from '../../../components/SummaryInfo/SummaryInfo';
 
 type Props = {
-  genres: Array<string>,
+  genres: IndexedCollection<string>,
   moviesQty: number
 };
 
@@ -35,8 +36,8 @@ export class GenresInfoContainer extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  genres: state.moviePage.genres,
-  moviesQty: state.moviePage.movies.length
+  genres: state.getIn(['moviePage', 'genres']),
+  moviesQty: state.getIn(['moviePage', 'movies']).size
 });
 
 export default connect(mapStateToProps)(GenresInfoContainer);

@@ -2,7 +2,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import type { Map } from 'immutable';
 
 import { MovieCard } from '../MovieCard/MovieCard';
 import { fetchMovie } from '../../../actions/actions';
@@ -16,7 +17,7 @@ type RouterMatch = {
 };
 
 type Props = {
-  movie: Movie,
+  movie: Map<string, any>,
   getMovie: Function,
   match: RouterMatch,
   location: Location
@@ -40,28 +41,24 @@ export class MovieCardContainer extends Component<Props> {
 
   shouldComponentUpdate(nextProps: Props) {
     const { location, movie, getMovie } = this.props;
-    const id = movie ? movie.id : '';
+    const id = movie ? movie.get('id') : '';
 
     if (location !== nextProps.location) {
       getMovie(nextProps.match.params.id);
     }
 
-    return id !== nextProps.movie.id;
+    return id !== nextProps.movie.get('id');
   }
 
   render() {
     const { movie } = this.props;
 
-    if (movie) {
-      return Object.keys(movie).length === 0 ? <Redirect to="/404" /> : <MovieCard movie={movie} />;
-    }
-
-    return null;
+    return movie ? <MovieCard movie={movie} /> : null;
   }
 }
 
 const mapStateToProps = state => ({
-  movie: state.moviePage.movie
+  movie: state.getIn(['moviePage', 'movie'])
 });
 
 const mapDispatchToProps = dispatch => ({

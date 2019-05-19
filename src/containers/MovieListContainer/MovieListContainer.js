@@ -2,13 +2,13 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import type { IndexedCollection, Map } from 'immutable';
 
 import { MovieList } from '../../components/MovieList/MovieList';
 import { SORT_FILTERS } from '../../shared/filtersMock';
-import type { Movie } from '../../shared/types';
 
 type Props = {
-  movies: Array<Movie>,
+  movies: IndexedCollection<Map<string, any>>,
   sortBy: string
 };
 
@@ -17,15 +17,21 @@ export class MovieListContainer extends Component<Props> {
     movies: []
   };
 
-  getSortedMovies = (): Array<Movie> => {
+  getSortedMovies = (): IndexedCollection<Map<string, any>> => {
     const { movies, sortBy } = this.props;
 
     switch (sortBy) {
       case SORT_FILTERS[0].value:
+        return movies.sort(
+          (firstMovie, secondMovie) =>
+            new Date(secondMovie.get(SORT_FILTERS[0].value)) -
+            new Date(firstMovie.get(SORT_FILTERS[0].value))
+        );
       case SORT_FILTERS[1].value:
-        return movies
-          .slice(0)
-          .sort((firstMovie, secondMovie) => secondMovie[sortBy] - firstMovie[sortBy]);
+        return movies.sort(
+          (firstMovie, secondMovie) =>
+            secondMovie.get(SORT_FILTERS[1].value) - firstMovie.get(SORT_FILTERS[1].value)
+        );
 
       default:
         return movies;
@@ -38,8 +44,8 @@ export class MovieListContainer extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  movies: state.movieList.movies,
-  sortBy: state.movieList.sortBy
+  movies: state.getIn(['movieList', 'movies']),
+  sortBy: state.getIn(['movieList', 'sortBy'])
 });
 
 export default connect(mapStateToProps)(MovieListContainer);

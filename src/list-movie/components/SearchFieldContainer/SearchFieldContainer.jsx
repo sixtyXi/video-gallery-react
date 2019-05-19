@@ -40,7 +40,7 @@ export class SearchFieldContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({ searchTxt: state.movieList.search });
+const mapStateToProps = state => ({ searchTxt: state.getIn(['movieList', 'search']) });
 const mapDispatchToProps = dispatch => ({
   setSearchValue: searchTxt => dispatch(setSearch(searchTxt)),
   getMovies: () => dispatch(fetchMovieList())

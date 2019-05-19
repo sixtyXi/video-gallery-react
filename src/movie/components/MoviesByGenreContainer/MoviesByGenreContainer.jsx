@@ -2,11 +2,10 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import type { IndexedCollection, Map } from 'immutable';
 
 import { MovieList } from '../../../components/MovieList/MovieList';
 import { fetchMovieListByGenre } from '../../../actions/actions';
-
-import type { Movie } from '../../../shared/types';
 
 const isEqualGenre = (arr1, arr2) => {
   if (arr1.length !== arr2.length) return false;
@@ -14,35 +13,29 @@ const isEqualGenre = (arr1, arr2) => {
   return arr1.sort().join() === arr2.sort().join();
 };
 
-const mapMoviesToComparableString = (movies: Array<Movie>) => {
-  const ids = movies.map(movie => +movie.id);
+const mapMoviesToComparableString = (movies: IndexedCollection<Map<string, any>>) => {
+  const ids = movies.map(movie => +movie.get('id'));
 
   return ids.sort((first, second) => first - second).join();
 };
 
-const isEqualMovies = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) return false;
+const isEqualMovies = (list1, list2) => {
+  if (list1.size !== list2.size) return false;
 
-  const first = mapMoviesToComparableString(arr1);
-  const second = mapMoviesToComparableString(arr2);
+  const first = mapMoviesToComparableString(list1);
+  const second = mapMoviesToComparableString(list2);
 
   return first === second;
 };
 
 type Props = {
-  movies: Array<Movie>,
-  genres: Array<string>,
-  movie: Movie,
+  movies: IndexedCollection<Map<string, any>>,
+  genres: IndexedCollection<string>,
+  movie: Map<string, any>,
   getMoviesByGenre: Function
 };
 
 export class MoviesByGenreContainer extends Component<Props> {
-  static defaultProps = {
-    movies: [],
-    genres: [],
-    movie: null
-  };
-
   componentWillMount() {
     const { genres, getMoviesByGenre } = this.props;
 
@@ -53,8 +46,8 @@ export class MoviesByGenreContainer extends Component<Props> {
     const { movies, movie, getMoviesByGenre } = this.props;
     const { movies: nextMovies, movie: nextMovie } = nextProps;
 
-    const movieId = movie ? movie.id : null;
-    const nextMovieId = nextMovie ? nextMovie.id : null;
+    const movieId = movie ? movie.get('id') : null;
+    const nextMovieId = nextMovie ? nextMovie.get('id') : null;
 
     if (movieId !== nextMovieId) {
       getMoviesByGenre(nextProps.genres);
@@ -68,8 +61,11 @@ export class MoviesByGenreContainer extends Component<Props> {
     return shouldUpdate;
   }
 
-  getFilteredMovies = (movies: Array<Movie>, movie: Movie): Array<Movie> => {
-    return movie ? movies.filter(el => el.id !== movie.id) : movies;
+  getFilteredMovies = (
+    movies: IndexedCollection<Map<string, any>>,
+    movie: Map<string, any>
+  ): IndexedCollection<Map<string, any>> => {
+    return movie ? movies.filter(el => el.get('id') !== movie.get('id')) : movies;
   };
 
   render() {
@@ -80,9 +76,9 @@ export class MoviesByGenreContainer extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  movies: state.moviePage.movies,
-  genres: state.moviePage.genres,
-  movie: state.moviePage.movie
+  movies: state.getIn(['moviePage', 'movies']),
+  genres: state.getIn(['moviePage', 'genres']),
+  movie: state.getIn(['moviePage', 'movie'])
 });
 
 const mapDispatchToProps = dispatch => ({

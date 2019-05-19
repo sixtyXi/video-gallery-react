@@ -15,6 +15,6 @@ export class MovieQtyContainer extends PureComponent<Props> {
   }
 }
 
-const mapStateToProps = state => ({ movieQty: state.movieList.movies.length });
+const mapStateToProps = state => ({ movieQty: state.getIn(['movieList', 'movies']).size });
 
 export default connect(mapStateToProps)(MovieQtyContainer);
