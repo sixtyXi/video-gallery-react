@@ -6,6 +6,7 @@ import type { IndexedCollection } from 'immutable';
 
 import { mapGenres } from '../../../utils/utils';
 import { SummaryInfo } from '../../../components/SummaryInfo/SummaryInfo';
+import { getGenresSelector, getMoviesByGenreQtySelector } from '../../../selectors';
 
 type Props = {
   genres: IndexedCollection<string>,
@@ -36,8 +37,8 @@ export class GenresInfoContainer extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  genres: state.getIn(['moviePage', 'genres']),
-  moviesQty: state.getIn(['moviePage', 'movies']).size
+  genres: getGenresSelector(state),
+  moviesQty: getMoviesByGenreQtySelector(state)
 });
 
 export default connect(mapStateToProps)(GenresInfoContainer);

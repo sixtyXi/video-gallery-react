@@ -1,8 +1,8 @@
 // @flow
 
-import { SET_MOVIE, SET_MOVIES_BY_GENRE } from '../actions/actions';
 import { fromJS } from 'immutable';
 import type { IndexedCollection, Map } from 'immutable';
+import { SET_MOVIE, SET_MOVIES_BY_GENRE } from '../actions/actions';
 
 export type MoviePageState = {
   movie: Map<string, any> | null,

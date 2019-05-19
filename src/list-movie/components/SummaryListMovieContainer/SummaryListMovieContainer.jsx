@@ -7,6 +7,7 @@ import type { State } from '../../../reducers/rootReducer';
 import { SummaryInfo } from '../../../components/SummaryInfo/SummaryInfo';
 import ConnectedMovieQtyContainer from '../MovieQtyContainer/MovieQtyContainer';
 import ConnectedSortFilterContainer from '../SortFilterContainer/SortFilterContainer';
+import { getMoviesQtySelector } from '../../../selectors';
 
 export const SummaryListMovieContainer = ({ moviesQty }: { moviesQty: number }) => {
   return moviesQty ? (
@@ -18,7 +19,7 @@ export const SummaryListMovieContainer = ({ moviesQty }: { moviesQty: number }) 
 };
 
 export const mapStateToProps = (state: State) => ({
-  moviesQty: state.getIn(['movieList', 'movies']).size
+  moviesQty: getMoviesQtySelector(state)
 });
 
 export default connect(mapStateToProps)(SummaryListMovieContainer);

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { FilterPanel } from '../../../components/FilterPanel/FilterPanel';
 import { setSearchBy } from '../../../actions/actions';
 import { SEARCH_FILTERS } from '../../../shared/filtersMock';
+import { getSearchByFilterSelector } from '../../../selectors';
 
 type Props = {
   currentFilter: string,
@@ -35,7 +36,7 @@ export class SearchFilterContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({ currentFilter: state.getIn(['movieList', 'searchBy']) });
+const mapStateToProps = state => ({ currentFilter: getSearchByFilterSelector(state) });
 const mapDispatchToProps = dispatch => ({
   setFilterValue: filterValue => dispatch(setSearchBy(filterValue))
 });

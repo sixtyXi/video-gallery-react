@@ -10,6 +10,7 @@ import styles from './SearchContainer.scss';
 import ConnectedSearchBtnContainer from '../SearchBtnContainer/SearchBtnContainer';
 import ConnectedSearchFieldContainer from '../SearchFieldContainer/SearchFieldContainer';
 import ConnectedSearchFilterContainer from '../SearchFilterContainer/SearchFilterContainer';
+import { getFiltersSelector } from '../../../selectors';
 
 type History = {
   push: Function
@@ -44,10 +45,6 @@ export class SearchContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({
-  search: state.getIn(['movieList', 'search']),
-  searchBy: state.getIn(['movieList', 'searchBy']),
-  sortBy: state.getIn(['movieList', 'sortBy'])
-});
+const mapStateToProps = state => getFiltersSelector(state);
 
 export default withRouter(connect(mapStateToProps)(SearchContainer));

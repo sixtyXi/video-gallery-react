@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { FilterPanel } from '../../../components/FilterPanel/FilterPanel';
 import { setSortBy } from '../../../actions/actions';
 import { SORT_FILTERS } from '../../../shared/filtersMock';
+import { getSortByFilterSelector } from '../../../selectors';
 
 type Props = {
   currentFilter: string,
@@ -35,7 +36,7 @@ export class SortFilterContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({ currentFilter: state.getIn(['movieList', 'sortBy']) });
+const mapStateToProps = state => ({ currentFilter: getSortByFilterSelector(state) });
 const mapDispatchToProps = dispatch => ({
   setFilterValue: filterValue => dispatch(setSortBy(filterValue))
 });

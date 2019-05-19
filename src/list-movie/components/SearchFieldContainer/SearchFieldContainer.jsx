@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import { setSearch, fetchMovieList } from '../../../actions/actions';
 import { SearchField } from '../SearchField/SearchField';
+import { getSearchFilterSelector } from '../../../selectors';
 
 type Props = {
   searchTxt: string,
@@ -40,7 +41,7 @@ export class SearchFieldContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({ searchTxt: state.getIn(['movieList', 'search']) });
+const mapStateToProps = state => ({ searchTxt: getSearchFilterSelector(state) });
 const mapDispatchToProps = dispatch => ({
   setSearchValue: searchTxt => dispatch(setSearch(searchTxt)),
   getMovies: () => dispatch(fetchMovieList())

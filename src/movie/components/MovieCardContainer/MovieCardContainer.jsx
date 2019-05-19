@@ -7,6 +7,7 @@ import type { Map } from 'immutable';
 
 import { MovieCard } from '../MovieCard/MovieCard';
 import { fetchMovie } from '../../../actions/actions';
+import { getMovieSelector } from '../../../selectors';
 
 import type { Movie, Location } from '../../../shared/types';
 
@@ -58,7 +59,7 @@ export class MovieCardContainer extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  movie: state.getIn(['moviePage', 'movie'])
+  movie: getMovieSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({

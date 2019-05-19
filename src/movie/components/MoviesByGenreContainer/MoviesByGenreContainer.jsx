@@ -6,12 +6,11 @@ import type { IndexedCollection, Map } from 'immutable';
 
 import { MovieList } from '../../../components/MovieList/MovieList';
 import { fetchMovieListByGenre } from '../../../actions/actions';
-
-const isEqualGenre = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) return false;
-
-  return arr1.sort().join() === arr2.sort().join();
-};
+import {
+  getMovieSelector,
+  getFilteredMoviesByGenreSelector,
+  getGenresSelector
+} from '../../../selectors';
 
 const mapMoviesToComparableString = (movies: IndexedCollection<Map<string, any>>) => {
   const ids = movies.map(movie => +movie.get('id'));
@@ -53,32 +52,20 @@ export class MoviesByGenreContainer extends Component<Props> {
       getMoviesByGenre(nextProps.genres);
     }
 
-    const shouldUpdate = !isEqualMovies(
-      this.getFilteredMovies(movies, movie),
-      this.getFilteredMovies(nextMovies, nextMovie)
-    );
-
-    return shouldUpdate;
+    return !isEqualMovies(movies, nextMovies);
   }
 
-  getFilteredMovies = (
-    movies: IndexedCollection<Map<string, any>>,
-    movie: Map<string, any>
-  ): IndexedCollection<Map<string, any>> => {
-    return movie ? movies.filter(el => el.get('id') !== movie.get('id')) : movies;
-  };
-
   render() {
-    const { movies, movie } = this.props;
+    const { movies } = this.props;
 
-    return <MovieList movies={this.getFilteredMovies(movies, movie)} />;
+    return <MovieList movies={movies} />;
   }
 }
 
 const mapStateToProps = state => ({
-  movies: state.getIn(['moviePage', 'movies']),
-  genres: state.getIn(['moviePage', 'genres']),
-  movie: state.getIn(['moviePage', 'movie'])
+  movies: getFilteredMoviesByGenreSelector(state),
+  genres: getGenresSelector(state),
+  movie: getMovieSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
