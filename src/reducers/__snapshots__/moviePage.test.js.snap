@@ -1,36 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`moviePage reducer should handle SET_MOVIE 1`] = `
-Object {
-  "genres": Array [
-    "Thriller",
-    "Crime",
-  ],
-  "movie": Object {
+Immutable.Map {
+  "movie": Immutable.Map {
     "budget": 8000000,
-    "genres": Array [
+    "release_date": "1994-09-10",
+    "vote_average": 8.3,
+    "tagline": "Just because you are a character doesn't mean you have character.",
+    "genres": Immutable.List [
       "Thriller",
       "Crime",
     ],
-    "id": 680,
-    "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
     "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
-    "release_date": "1994-09-10",
-    "revenue": 213928762,
-    "runtime": 154,
-    "tagline": "Just because you are a character doesn't mean you have character.",
     "title": "Pulp Fiction",
-    "vote_average": 8.3,
+    "runtime": 154,
+    "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
     "vote_count": 10910,
+    "id": 680,
+    "revenue": 213928762,
   },
-  "movies": Array [],
+  "genres": Immutable.List [
+    "Thriller",
+    "Crime",
+  ],
+  "movies": Immutable.List [],
 }
 `;
 
 exports[`moviePage reducer should return the initial state 1`] = `
-Object {
-  "genres": Array [],
+Immutable.Map {
   "movie": null,
-  "movies": Array [],
+  "genres": Immutable.List [],
+  "movies": Immutable.List [],
 }
 `;
