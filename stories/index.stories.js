@@ -1,6 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { storiesOf } from '@storybook/react';
+import { fromJS } from 'immutable';
 
 import '../src/App.scss';
 import { MOVIES } from '../src/shared/moviesMock';
@@ -37,7 +38,7 @@ storiesOf('Footer', module).add('Default', () => <Footer />);
 
 storiesOf('MovieThumb', module)
   .addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>)
-  .add('Default', () => <MovieThumb movie={MOVIES[0]} />);
+  .add('Default', () => <MovieThumb movie={fromJS(MOVIES[0])} />);
 
 storiesOf('MovieCard', module)
   .addParameters({
@@ -45,6 +46,6 @@ storiesOf('MovieCard', module)
   })
   .add('Default', () => (
     <ContentWrapper>
-      <MovieCard movie={MOVIES[0]} />
+      <MovieCard movie={fromJS(MOVIES[0])} />
     </ContentWrapper>
   ));
