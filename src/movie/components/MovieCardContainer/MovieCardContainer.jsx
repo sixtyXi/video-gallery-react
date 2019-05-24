@@ -3,13 +3,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import type { Map } from 'immutable';
+import type { RecordOf } from 'immutable';
 
 import { MovieCard } from '../MovieCard/MovieCard';
-import { fetchMovie } from '../../../actions/actions';
+import { fetchMoviePage } from '../../../actions/actions';
 import { getMovieSelector } from '../../../selectors';
 
-import type { Location } from '../../../shared/types';
+import type { Location, Movie } from '../../../shared/types';
 
 type RouterMatch = {
   params: {
@@ -18,7 +18,7 @@ type RouterMatch = {
 };
 
 type Props = {
-  movie: Map<string, any>,
+  movie: RecordOf<Movie>,
   getMovie: Function,
   match: RouterMatch,
   location: Location
@@ -54,7 +54,7 @@ export class MovieCardContainer extends Component<Props> {
   render() {
     const { movie } = this.props;
 
-    return movie ? <MovieCard movie={movie.toJS()} /> : null;
+    return movie ? <MovieCard movie={movie} /> : null;
   }
 }
 
@@ -64,7 +64,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getMovie: id => {
-    dispatch(fetchMovie(id));
+    dispatch(fetchMoviePage(id));
   }
 });
 

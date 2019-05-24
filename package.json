@@ -85,6 +85,7 @@
     "@loadable/component": "^5.9.0",
     "@loadable/server": "^5.9.0",
     "classnames": "^2.2.6",
+    "core-js": "^2.6.5",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "immutable": "^4.0.0-rc.12",

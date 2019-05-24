@@ -1,30 +1,35 @@
 // @flow
 
-import { fromJS } from 'immutable';
-import type { IndexedCollection, Map } from 'immutable';
-import { SET_MOVIE, SET_MOVIES_BY_GENRE } from '../actions/actions';
+import { Record, List } from 'immutable';
+import type { RecordOf, RecordFactory, IndexedCollection } from 'immutable';
 
-export type MoviePageState = {
-  movie: Map<string, any> | null,
+import { type Movie, makeMovie } from '../shared/types';
+import { SET_MOVIE_PAGE_STATE } from '../actions/actions';
+
+type MoviePageStateProps = {
+  movie: RecordOf<Movie> | null,
   genres: IndexedCollection<string>,
-  movies: IndexedCollection<Map<string, any>>
+  movies: IndexedCollection<RecordOf<Movie>>
 };
 
-export const initialState: MoviePageState = fromJS({
+export type MoviePageState = RecordOf<MoviePageStateProps>;
+
+export const makeMoviePageState: RecordFactory<MoviePageState> = Record({
   movie: null,
-  genres: [],
-  movies: []
+  genres: List(),
+  movies: List()
 });
 
-export const moviePage = (state: MoviePageState = initialState, action: Function) => {
+export const moviePage = (
+  state: RecordOf<MoviePageState> = makeMoviePageState(),
+  action: Function
+) => {
   switch (action.type) {
-    case SET_MOVIE:
+    case SET_MOVIE_PAGE_STATE:
       return state
-        .setIn(['movie'], fromJS(action.payload.movie))
-        .setIn(['genres'], fromJS(action.payload.movie.genres));
-    case SET_MOVIES_BY_GENRE:
-      return state.setIn(['movies'], fromJS(action.payload.movies));
-
+        .setIn(['movie'], makeMovie(action.payload.movie))
+        .setIn(['genres'], List(action.payload.movie.genres))
+        .setIn(['movies'], List(action.payload.movies.map(makeMovie)));
     default:
       return state;
   }
