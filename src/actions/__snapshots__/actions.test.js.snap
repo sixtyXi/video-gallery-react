@@ -4,8 +4,8 @@ exports[`actions create SET_MOVIE 1`] = `
 Array [
   Object {
     "payload": Object {
+      "genres": undefined,
       "movie": Object {
-        "budget": 8000000,
         "genres": Array [
           "Thriller",
           "Crime",
@@ -14,15 +14,14 @@ Array [
         "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
         "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
         "release_date": "1994-09-10",
-        "revenue": 213928762,
         "runtime": 154,
         "tagline": "Just because you are a character doesn't mean you have character.",
         "title": "Pulp Fiction",
         "vote_average": 8.3,
-        "vote_count": 10910,
       },
+      "movies": undefined,
     },
-    "type": "SET_MOVIE",
+    "type": "SET_MOVIE_PAGE_STATE",
   },
 ]
 `;
@@ -33,7 +32,6 @@ Array [
     "payload": Object {
       "movies": Array [
         Object {
-          "budget": 8000000,
           "genres": Array [
             "Thriller",
             "Crime",
@@ -42,12 +40,10 @@ Array [
           "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
           "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
           "release_date": "1994-09-10",
-          "revenue": 213928762,
           "runtime": 154,
           "tagline": "Just because you are a character doesn't mean you have character.",
           "title": "Pulp Fiction",
           "vote_average": 8.3,
-          "vote_count": 10910,
         },
         Object {
           "genres": Array [

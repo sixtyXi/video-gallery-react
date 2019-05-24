@@ -1,34 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`moviePage reducer should handle SET_MOVIE 1`] = `
-Immutable.Map {
-  "movie": Immutable.Map {
-    "budget": 8000000,
-    "release_date": "1994-09-10",
-    "vote_average": 8.3,
-    "tagline": "Just because you are a character doesn't mean you have character.",
-    "genres": Immutable.List [
-      "Thriller",
-      "Crime",
-    ],
-    "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
-    "title": "Pulp Fiction",
-    "runtime": 154,
-    "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
-    "vote_count": 10910,
-    "id": 680,
-    "revenue": 213928762,
-  },
-  "genres": Immutable.List [
-    "Thriller",
-    "Crime",
-  ],
+Immutable.Record {
+  "movie": null,
+  "genres": Immutable.List [],
   "movies": Immutable.List [],
 }
 `;
 
 exports[`moviePage reducer should return the initial state 1`] = `
-Immutable.Map {
+Immutable.Record {
   "movie": null,
   "genres": Immutable.List [],
   "movies": Immutable.List [],

@@ -1,105 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`movieList reducer should handle SET_MOVIE_LIST 1`] = `
-Immutable.Map {
+Immutable.Record {
   "movies": Immutable.List [
-    Immutable.Map {
-      "budget": 8000000,
-      "release_date": "1994-09-10",
-      "vote_average": 8.3,
-      "tagline": "Just because you are a character doesn't mean you have character.",
-      "genres": Immutable.List [
+    Immutable.Record {
+      "id": 680,
+      "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+      "title": "Pulp Fiction",
+      "genres": Array [
         "Thriller",
         "Crime",
       ],
-      "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
-      "title": "Pulp Fiction",
+      "release_date": "1994-09-10",
+      "vote_average": 8.3,
+      "tagline": "Just because you are a character doesn't mean you have character.",
       "runtime": 154,
       "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
-      "vote_count": 10910,
-      "id": 680,
-      "revenue": 213928762,
     },
-    Immutable.Map {
-      "release_date": "2003",
-      "vote_average": 4.5,
-      "tagline": "Oscar-winning Movies",
-      "genres": Immutable.List [
-        "action",
-        "adventure",
-      ],
-      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
-      "title": "Kill Bill: Vol. 1",
-      "runtime": 150,
-      "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+    Immutable.Record {
       "id": 2,
-    },
-    Immutable.Map {
-      "release_date": "1995",
-      "vote_average": 3,
-      "tagline": "Oscar-winning Movies",
-      "genres": Immutable.List [
-        "comedies",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+      "title": "Kill Bill: Vol. 1",
+      "genres": Array [
+        "action",
+        "adventure",
       ],
-      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
-      "title": "Four rooms",
-      "runtime": 97,
-      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+      "release_date": "2003",
+      "vote_average": 4.5,
+      "tagline": "Oscar-winning Movies",
+      "runtime": 150,
+      "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+    },
+    Immutable.Record {
       "id": 3,
-    },
-    Immutable.Map {
-      "release_date": "2003",
-      "vote_average": 4.5,
-      "tagline": "Oscar-winning Movies",
-      "genres": Immutable.List [
-        "action",
-        "adventure",
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+      "title": "Four rooms",
+      "genres": Array [
+        "comedies",
       ],
-      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
-      "title": "Kill Bill: Vol. 1",
-      "runtime": 150,
-      "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+      "release_date": "1995",
+      "vote_average": 3,
+      "tagline": "Oscar-winning Movies",
+      "runtime": 97,
+      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+    },
+    Immutable.Record {
       "id": 4,
-    },
-    Immutable.Map {
-      "release_date": "1995",
-      "vote_average": 3,
-      "tagline": "Oscar-winning Movies",
-      "genres": Immutable.List [
-        "comedies",
-      ],
-      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
-      "title": "Four rooms",
-      "runtime": 97,
-      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
-      "id": 5,
-    },
-    Immutable.Map {
-      "release_date": "2003",
-      "vote_average": 4.5,
-      "tagline": "Oscar-winning Movies",
-      "genres": Immutable.List [
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+      "title": "Kill Bill: Vol. 1",
+      "genres": Array [
         "action",
         "adventure",
       ],
-      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
-      "title": "Kill Bill: Vol. 1",
+      "release_date": "2003",
+      "vote_average": 4.5,
+      "tagline": "Oscar-winning Movies",
       "runtime": 150,
       "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
-      "id": 6,
     },
-    Immutable.Map {
+    Immutable.Record {
+      "id": 5,
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+      "title": "Four rooms",
+      "genres": Array [
+        "comedies",
+      ],
       "release_date": "1995",
       "vote_average": 3,
       "tagline": "Oscar-winning Movies",
-      "genres": Immutable.List [
-        "comedies",
-      ],
-      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
-      "title": "Four rooms",
       "runtime": 97,
       "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
+    },
+    Immutable.Record {
+      "id": 6,
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+      "title": "Kill Bill: Vol. 1",
+      "genres": Array [
+        "action",
+        "adventure",
+      ],
+      "release_date": "2003",
+      "vote_average": 4.5,
+      "tagline": "Oscar-winning Movies",
+      "runtime": 150,
+      "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+    },
+    Immutable.Record {
       "id": 7,
+      "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
+      "title": "Four rooms",
+      "genres": Array [
+        "comedies",
+      ],
+      "release_date": "1995",
+      "vote_average": 3,
+      "tagline": "Oscar-winning Movies",
+      "runtime": 97,
+      "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
     },
   ],
   "searchBy": "title",
@@ -109,7 +106,7 @@ Immutable.Map {
 `;
 
 exports[`movieList reducer should handle SET_SEARCH 1`] = `
-Immutable.Map {
+Immutable.Record {
   "movies": Immutable.List [],
   "searchBy": "title",
   "sortBy": "release_date",
@@ -118,7 +115,7 @@ Immutable.Map {
 `;
 
 exports[`movieList reducer should handle SET_SEARCH_BY 1`] = `
-Immutable.Map {
+Immutable.Record {
   "movies": Immutable.List [],
   "searchBy": "genres",
   "sortBy": "release_date",
@@ -127,7 +124,7 @@ Immutable.Map {
 `;
 
 exports[`movieList reducer should handle SET_SORT_BY 1`] = `
-Immutable.Map {
+Immutable.Record {
   "movies": Immutable.List [],
   "searchBy": "title",
   "sortBy": "vote_average",
@@ -136,7 +133,7 @@ Immutable.Map {
 `;
 
 exports[`movieList reducer should return the initial state 1`] = `
-Immutable.Map {
+Immutable.Record {
   "movies": Immutable.List [],
   "searchBy": "title",
   "sortBy": "release_date",
