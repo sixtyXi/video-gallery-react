@@ -5,12 +5,12 @@ export const SET_MOVIE_LIST = 'SET_MOVIE_LIST';
 export const SET_SEARCH_BY = 'SET_SEARCH_BY';
 export const SET_SORT_BY = 'SET_SORT_BY';
 export const SET_SEARCH = 'SET_SEARCH';
-export const SET_MOVIE = 'SET_MOVIE';
+export const SET_MOVIE_PAGE_STATE = 'SET_MOVIE_PAGE_STATE';
 export const SET_MOVIES_BY_GENRE = 'SET_MOVIES_BY_GENRE';
 export const SET_INITIAL_STATE = 'SET_INITIAL_STATE';
 export const FETCH_MOVIE_LIST = 'FETCH_MOVIE_LIST';
 export const FETCH_MOVIE_LIST_BY_GENRE = 'FETCH_MOVIE_LIST_BY_GENRE';
-export const FETCH_MOVIE = 'FETCH_MOVIE';
+export const FETCH_MOVIE_PAGE = 'FETCH_MOVIE_PAGE';
 
 export const setMovieList = movies => {
   return {
@@ -21,19 +21,12 @@ export const setMovieList = movies => {
   };
 };
 
-export const setMovie = movie => {
+export const setMovie = (movie, genres, movies) => {
   return {
-    type: SET_MOVIE,
+    type: SET_MOVIE_PAGE_STATE,
     payload: {
-      movie
-    }
-  };
-};
-
-export const setMoviesByGenre = movies => {
-  return {
-    type: SET_MOVIES_BY_GENRE,
-    payload: {
+      movie,
+      genres,
       movies
     }
   };
@@ -58,9 +51,9 @@ export const fetchMovieListByGenre = genres => {
   };
 };
 
-export const fetchMovie = id => {
+export const fetchMoviePage = id => {
   return {
-    type: FETCH_MOVIE,
+    type: FETCH_MOVIE_PAGE,
     payload: id
   };
 };
@@ -80,29 +73,20 @@ export function* watchFetchMovieList() {
   yield takeLatest(FETCH_MOVIE_LIST, fetchMovieListAsync);
 }
 
-export function* fetchMovieListByGenreAsync(action) {
-  const movies = yield call([moviesAPI, 'getMoviesByGenre'], action.payload);
-
-  yield put(setMoviesByGenre(movies));
-}
-
-export function* watchFetchMovieListByGenre() {
-  yield takeLatest(FETCH_MOVIE_LIST_BY_GENRE, fetchMovieListByGenreAsync);
-}
-
-export function* fetchMovieAsync(action) {
+export function* fetchMoviePageAsync(action) {
   const movie = yield call([moviesAPI, 'getMovie'], action.payload);
+  const movies = yield call([moviesAPI, 'getMoviesByGenre'], movie.genres);
 
-  yield put(setMovie(movie));
+  yield put(setMovie(movie, movie.genres, movies));
 }
 
-export function* watchFetchMovie() {
-  yield takeLatest(FETCH_MOVIE, fetchMovieAsync);
+export function* watchFetchMoviePage() {
+  yield takeLatest(FETCH_MOVIE_PAGE, fetchMoviePageAsync);
 }
 
 // Movies Saga
 export function* moviesSaga() {
-  yield all([watchFetchMovieList(), watchFetchMovieListByGenre(), watchFetchMovie()]);
+  yield all([watchFetchMovieList(), watchFetchMoviePage()]);
 }
 
 export const setSearchBy = filterValue => {
