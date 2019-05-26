@@ -2,12 +2,12 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Header } from '../../components/Header/Header';
-import MoviesByGenreContainer from '../components/MoviesByGenreContainer/MoviesByGenreContainer';
+import ConnectedMoviesByGenreContainer from '../components/MoviesByGenreContainer/MoviesByGenreContainer';
 import { Logo } from '../../components/Logo/Logo';
 import { SearchBtn } from '../../components/SearchBtn/SearchBtn';
 import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
-import MovieCardContainer from '../components/MovieCardContainer/MovieCardContainer';
-import GenresInfoContainer from '../components/GenresInfoContainer/GenresInfoContainer';
+import ConnectedMovieCardContainer from '../components/MovieCardContainer/MovieCardContainer';
+import ConnectedGenresInfoContainer from '../components/GenresInfoContainer/GenresInfoContainer';
 
 const MoviePage = () => {
   return (
@@ -17,12 +17,12 @@ const MoviePage = () => {
         <Link to="/">
           <SearchBtn className="searchBtnSecondary" />
         </Link>
-        <MovieCardContainer />
+        <ConnectedMovieCardContainer />
       </Header>
       <main>
-        <GenresInfoContainer />
+        <ConnectedGenresInfoContainer />
         <ContentWrapper>
-          <MoviesByGenreContainer />
+          <ConnectedMoviesByGenreContainer />
         </ContentWrapper>
       </main>
     </Fragment>

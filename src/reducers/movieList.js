@@ -1,3 +1,10 @@
+// @flow
+
+import { Record, List } from 'immutable';
+import type { RecordOf, RecordFactory, IndexedCollection } from 'immutable';
+
+import { type Movie, type MovieFilters, makeMovie } from '../shared/types';
+
 import {
   SET_MOVIE_LIST,
   SET_SEARCH_BY,
@@ -7,35 +14,32 @@ import {
 } from '../actions/actions';
 import { DEFAULT_FILTERS } from '../shared/filtersMock';
 
-export const initialState = {
-  movies: [],
-  ...DEFAULT_FILTERS
+type MovieListStateProps = MovieFilters & {
+  movies: IndexedCollection<RecordOf<Movie>>
 };
 
-export const movieList = (state = initialState, action) => {
+export type MovieListState = RecordOf<MovieListStateProps>;
+
+export const makeMovieListState: RecordFactory<MovieListState> = Record({
+  movies: List(),
+  ...DEFAULT_FILTERS
+});
+
+export const movieList = (
+  state: RecordOf<MovieListState> = makeMovieListState(),
+  action: Function
+) => {
   switch (action.type) {
     case SET_MOVIE_LIST:
-      return {
-        ...state,
-        movies: action.payload.movies
-      };
+      return state.setIn(['movies'], List(action.payload.movies.map(makeMovie)));
     case SET_SEARCH_BY:
-      return {
-        ...state,
-        searchBy: action.payload.filterValue
-      };
+      return state.setIn(['searchBy'], action.payload.filterValue);
     case SET_SORT_BY:
-      return {
-        ...state,
-        sortBy: action.payload.filterValue
-      };
+      return state.setIn(['sortBy'], action.payload.filterValue);
     case SET_SEARCH:
-      return {
-        ...state,
-        search: action.payload.searchValue
-      };
+      return state.setIn(['search'], action.payload.searchValue);
     case SET_INITIAL_STATE:
-      return initialState;
+      return makeMovieListState();
     default:
       return state;
   }

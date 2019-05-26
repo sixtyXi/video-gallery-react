@@ -1,10 +1,14 @@
+// @flow
+
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import loadable from '@loadable/component';
 
 import './App.scss';
 import { Decorator } from './containers/Decorator/Decorator';
+
+import type { Store } from './configureStore';
+import type { Location } from './shared/types';
 
 const ListMoviePage = loadable(() =>
   import('./list-movie/ListMoviePageContainer/ListMoviePageContainer')
@@ -12,7 +16,14 @@ const ListMoviePage = loadable(() =>
 const MoviePage = loadable(() => import('./movie/MoviePage/MoviePage'));
 const NotFoundPage = loadable(() => import('./not-found/NotFoundPage/NotFoundPage'));
 
-const App = ({ Router, location, context, store }) => {
+type Props = {
+  Router: Function,
+  location?: Location,
+  context?: { url: string },
+  store: Store
+};
+
+const App = ({ Router, location, context, store }: Props) => {
   return (
     <Decorator store={store}>
       <Router location={location} context={context}>
@@ -25,18 +36,6 @@ const App = ({ Router, location, context, store }) => {
       </Router>
     </Decorator>
   );
-};
-
-App.propTypes = {
-  Router: PropTypes.func.isRequired,
-  location: PropTypes.string,
-  context: PropTypes.shape({
-    url: PropTypes.string
-  }),
-  store: PropTypes.shape({
-    dispatch: PropTypes.func.isRequired,
-    getState: PropTypes.func.isRequired
-  }).isRequired
 };
 
 App.defaultProps = {

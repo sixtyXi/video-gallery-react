@@ -1,16 +1,23 @@
+// @flow
+
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { FilterPanel } from '../../../components/FilterPanel/FilterPanel';
 import { setSearchBy } from '../../../actions/actions';
 import { SEARCH_FILTERS } from '../../../shared/filtersMock';
+import { getSearchByFilterSelector } from '../../../selectors';
+
+type Props = {
+  currentFilter: string,
+  setFilterValue: Function
+};
 
 const SEARCH_TITLE = 'Search by';
 
-export class SearchFilterContainer extends Component {
-  handleChange = event => {
-    this.props.setFilterValue(event.target.value);
+export class SearchFilterContainer extends Component<Props> {
+  handleChange = (event: SyntheticEvent<HTMLInputElement>) => {
+    this.props.setFilterValue(event.currentTarget.value);
   };
 
   render() {
@@ -29,12 +36,7 @@ export class SearchFilterContainer extends Component {
   }
 }
 
-SearchFilterContainer.propTypes = {
-  currentFilter: PropTypes.string.isRequired,
-  setFilterValue: PropTypes.func.isRequired
-};
-
-const mapStateToProps = state => ({ currentFilter: state.movieList.searchBy });
+const mapStateToProps = state => ({ currentFilter: getSearchByFilterSelector(state) });
 const mapDispatchToProps = dispatch => ({
   setFilterValue: filterValue => dispatch(setSearchBy(filterValue))
 });

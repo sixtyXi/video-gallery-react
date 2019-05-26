@@ -1,31 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`moviePage reducer should handle SET_MOVIE 1`] = `
-Object {
-  "genres": Array [
-    "comedies",
-  ],
-  "movie": Object {
-    "genres": Array [
-      "comedies",
-    ],
-    "id": 1,
-    "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
-    "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
-    "release_date": "1995",
-    "runtime": 97,
-    "tagline": "Oscar-winning Movies",
-    "title": "Four rooms",
-    "vote_average": 3,
-  },
-  "movies": Array [],
+Immutable.Record {
+  "movie": null,
+  "genres": Immutable.List [],
+  "movies": Immutable.List [],
 }
 `;
 
 exports[`moviePage reducer should return the initial state 1`] = `
-Object {
-  "genres": Array [],
+Immutable.Record {
   "movie": null,
-  "movies": Array [],
+  "genres": Immutable.List [],
+  "movies": Immutable.List [],
 }
 `;

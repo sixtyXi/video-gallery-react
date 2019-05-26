@@ -13,39 +13,40 @@ exports[`MovieList renders correctly 1`] = `
   className="listWrapper"
 >
   <MovieThumb
-    key="1"
+    key="680"
     movie={
-      Object {
-        "genres": Array [
-          "comedies",
+      Immutable.Map {
+        "release_date": "1994-09-10",
+        "vote_average": 8.3,
+        "tagline": "Just because you are a character doesn't mean you have character.",
+        "genres": Immutable.List [
+          "Thriller",
+          "Crime",
         ],
-        "id": 1,
-        "overview": "Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.",
-        "poster_path": "https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg",
-        "release_date": "1995",
-        "runtime": 97,
-        "tagline": "Oscar-winning Movies",
-        "title": "Four rooms",
-        "vote_average": 3,
+        "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+        "title": "Pulp Fiction",
+        "runtime": 154,
+        "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+        "id": 680,
       }
     }
   />
   <MovieThumb
     key="2"
     movie={
-      Object {
-        "genres": Array [
+      Immutable.Map {
+        "release_date": "2003",
+        "vote_average": 4.5,
+        "tagline": "Oscar-winning Movies",
+        "genres": Immutable.List [
           "action",
           "adventure",
         ],
-        "id": 2,
-        "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
         "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
-        "release_date": "2003",
-        "runtime": 150,
-        "tagline": "Oscar-winning Movies",
         "title": "Kill Bill: Vol. 1",
-        "vote_average": 4.5,
+        "runtime": 150,
+        "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+        "id": 2,
       }
     }
   />

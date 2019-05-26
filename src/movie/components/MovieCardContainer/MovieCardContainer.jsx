@@ -1,12 +1,34 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import type { RecordOf } from 'immutable';
 
 import { MovieCard } from '../MovieCard/MovieCard';
-import { fetchMovie } from '../../../actions/actions';
+import { fetchMoviePage } from '../../../actions/actions';
+import { getMovieSelector } from '../../../selectors';
 
-export class MovieCardContainer extends Component {
+import type { Location, Movie } from '../../../shared/types';
+
+type RouterMatch = {
+  params: {
+    id: string
+  }
+};
+
+type Props = {
+  movie: RecordOf<Movie>,
+  getMovie: Function,
+  match: RouterMatch,
+  location: Location
+};
+
+export class MovieCardContainer extends Component<Props> {
+  static defaultProps = {
+    movie: null
+  };
+
   componentWillMount() {
     const {
       getMovie,
@@ -18,61 +40,31 @@ export class MovieCardContainer extends Component {
     getMovie(id);
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps: Props) {
     const { location, movie, getMovie } = this.props;
-    const id = movie ? movie.id : '';
+    const id = movie ? movie.get('id') : '';
 
     if (location !== nextProps.location) {
       getMovie(nextProps.match.params.id);
     }
 
-    return id !== nextProps.movie.id;
+    return id !== nextProps.movie.get('id');
   }
 
   render() {
     const { movie } = this.props;
 
-    if (movie) {
-      return Object.keys(movie).length === 0 ? <Redirect to="/404" /> : <MovieCard movie={movie} />;
-    }
-
-    return null;
+    return movie ? <MovieCard movie={movie} /> : null;
   }
 }
 
-MovieCardContainer.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    poster_path: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    vote_average: PropTypes.number.isRequired,
-    tagline: PropTypes.string.isRequired,
-    release_date: PropTypes.string.isRequired,
-    runtime: PropTypes.number,
-    overview: PropTypes.string.isRequired
-  }),
-  getMovie: PropTypes.func.isRequired,
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string
-    })
-  }).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string
-  }).isRequired
-};
-
-MovieCardContainer.defaultProps = {
-  movie: null
-};
-
 const mapStateToProps = state => ({
-  movie: state.moviePage.movie
+  movie: getMovieSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
   getMovie: id => {
-    dispatch(fetchMovie(id));
+    dispatch(fetchMoviePage(id));
   }
 });
 

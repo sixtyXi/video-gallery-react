@@ -15,7 +15,8 @@ module.exports = function(api) {
         useBuiltIns: 'usage'
       }
     ],
-    '@babel/preset-react'
+    '@babel/preset-react',
+    '@babel/preset-flow'
   ];
   const plugins = ['@babel/plugin-proposal-class-properties', '@loadable/babel-plugin'];
 

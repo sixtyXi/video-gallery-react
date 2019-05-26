@@ -1,19 +1,17 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { getMoviesQtySelector } from '../../../selectors';
 
-export class MovieQtyContainer extends PureComponent {
-  render() {
-    const { movieQty } = this.props;
-
-    return <div>{movieQty} movies found</div>;
-  }
-}
-
-MovieQtyContainer.propTypes = {
-  movieQty: PropTypes.number.isRequired
+type Props = {
+  movieQty: number
 };
 
-const mapStateToProps = state => ({ movieQty: state.movieList.movies.length });
+export const MovieQtyContainer = ({ movieQty }: Props) => {
+  return <div>{`${movieQty} movies found`}</div>;
+};
+
+const mapStateToProps = state => ({ movieQty: getMoviesQtySelector(state) });
 
 export default connect(mapStateToProps)(MovieQtyContainer);

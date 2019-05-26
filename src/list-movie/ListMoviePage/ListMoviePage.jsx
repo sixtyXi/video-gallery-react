@@ -2,22 +2,22 @@ import React, { Fragment } from 'react';
 
 import { Header } from '../../components/Header/Header';
 import { Logo } from '../../components/Logo/Logo';
-import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
-import SearchContainer from '../components/SearchContainer/SearchContainer';
+import ConnectedMovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
+import ConnectedSearchContainer from '../components/SearchContainer/SearchContainer';
 import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
-import SummaryListMovieContainer from '../components/SummaryListMovieContainer/SummaryListMovieContainer';
+import ConnectedSummaryListMovieContainer from '../components/SummaryListMovieContainer/SummaryListMovieContainer';
 
 export const ListMoviePage = () => {
   return (
     <Fragment>
       <Header>
         <Logo />
-        <SearchContainer />
+        <ConnectedSearchContainer />
       </Header>
       <main>
-        <SummaryListMovieContainer />
+        <ConnectedSummaryListMovieContainer />
         <ContentWrapper>
-          <MovieListContainer />
+          <ConnectedMovieListContainer />
         </ContentWrapper>
       </main>
     </Fragment>

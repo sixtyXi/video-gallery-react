@@ -1,11 +1,23 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import type { IndexedCollection } from 'immutable';
 
 import { mapGenres } from '../../../utils/utils';
 import { SummaryInfo } from '../../../components/SummaryInfo/SummaryInfo';
+import { getGenresSelector, getMoviesByGenreQtySelector } from '../../../selectors';
 
-export class GenresInfoContainer extends Component {
+type Props = {
+  genres: IndexedCollection<string>,
+  moviesQty: number
+};
+
+export class GenresInfoContainer extends Component<Props> {
+  static defaultProps = {
+    genres: []
+  };
+
   getGenres = () => {
     const { genres } = this.props;
 
@@ -18,24 +30,15 @@ export class GenresInfoContainer extends Component {
 
     return hasMoviesSameGenre ? (
       <SummaryInfo>
-        <div>Films by {this.getGenres()} genre</div>
+        <div>{`Films by ${this.getGenres()} genre`}</div>
       </SummaryInfo>
     ) : null;
   }
 }
 
-GenresInfoContainer.propTypes = {
-  genres: PropTypes.arrayOf(PropTypes.string),
-  moviesQty: PropTypes.number.isRequired
-};
-
-GenresInfoContainer.defaultProps = {
-  genres: []
-};
-
 const mapStateToProps = state => ({
-  genres: state.moviePage.genres,
-  moviesQty: state.moviePage.movies.length
+  genres: getGenresSelector(state),
+  moviesQty: getMoviesByGenreQtySelector(state)
 });
 
 export default connect(mapStateToProps)(GenresInfoContainer);

@@ -1,19 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+
+import * as React from 'react';
 import styles from './Header.scss';
 
 import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
 
-export const Header = ({ children }) => {
+export const Header = ({ children }: { children: React.Node | null }) => {
   return (
     <header data-cy="header" className={styles.header}>
       <ContentWrapper>{children}</ContentWrapper>
     </header>
   );
-};
-
-Header.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };
 
 Header.defaultProps = {

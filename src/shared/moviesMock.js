@@ -1,14 +1,15 @@
 export const MOVIES = [
   {
-    id: 1,
-    title: 'Four rooms',
-    tagline: 'Oscar-winning Movies',
-    vote_average: 3,
-    release_date: '1995',
-    poster_path: 'https://images-na.ssl-images-amazon.com/images/I/51qcn-rYWqL._SY450_.jpg',
-    overview: `Don't miss the fun in this hilariously sexy comedy that has Antonio Banderas (Once Upon a Time in Mexico), Madonna (Swept Away), and a sizzling all-star cast checking in for laughs! It's Ted the Bellhop's (Tim Roth, Pulp Fiction) first night on the job...and the hotel's very unusual guests are about to place him in some outrageous predicaments.`,
-    runtime: 97,
-    genres: ['comedies']
+    id: 680,
+    title: 'Pulp Fiction',
+    tagline: "Just because you are a character doesn't mean you have character.",
+    vote_average: 8.3,
+    release_date: '1994-09-10',
+    poster_path: 'https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg',
+    overview:
+      "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+    genres: ['Thriller', 'Crime'],
+    runtime: 154
   },
   {
     id: 2,

@@ -1,12 +1,31 @@
+// @flow
+
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import styles from './FilterItem.scss';
 
 const cx = classNames.bind(styles);
 
-export const FilterItem = ({ name, handleChange, filterValue, filterTitle, checked, type }) => {
+export type FilterType = 'btn' | 'label';
+
+type Props = {
+  name: string,
+  handleChange: Function,
+  filterValue: string,
+  filterTitle: string,
+  checked: boolean,
+  type: FilterType
+};
+
+export const FilterItem = ({
+  name,
+  handleChange,
+  filterValue,
+  filterTitle,
+  checked,
+  type
+}: Props) => {
   const className = cx({
     btn: type === 'btn',
     label: type === 'label'
@@ -28,15 +47,6 @@ export const FilterItem = ({ name, handleChange, filterValue, filterTitle, check
       </label>
     </Fragment>
   );
-};
-
-FilterItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  filterValue: PropTypes.string.isRequired,
-  filterTitle: PropTypes.string.isRequired,
-  checked: PropTypes.bool,
-  type: PropTypes.oneOf(['btn', 'label'])
 };
 
 FilterItem.defaultProps = {
