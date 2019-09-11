@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard renders correctly 1`] = `
+<article
+  className="wrapper"
+>
+  <img
+    alt="Poster of Pulp Fiction"
+    className="poster"
+    src="https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg"
+  />
+  <div
+    className="descWrapper"
+  >
+    <h1
+      className="title"
+      data-rate={8.3}
+    >
+      Pulp Fiction
+    </h1>
+    <p>
+      Just because you are a character doesn't mean you have character.
+    </p>
+    <time
+      className="releaseDate"
+    >
+      1994
+    </time>
+    <p
+      className="runtime"
+    >
+      154 min
+    </p>
+    <p>
+      A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.
+    </p>
+  </div>
+</article>
+`;

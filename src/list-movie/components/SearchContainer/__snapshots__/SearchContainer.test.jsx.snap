@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchContainer renders correctly 1`] = `
+<form
+  className="searchWrapper"
+>
+  <h1
+    className="pageTitle"
+  >
+    Find your movie
+  </h1>
+  <withRouter(Connect(SearchFieldContainer))
+    pushUrl={[Function]}
+  />
+  <Connect(SearchFilterContainer) />
+  <Connect(SearchBtnContainer)
+    pushUrl={[Function]}
+  />
+</form>
+`;

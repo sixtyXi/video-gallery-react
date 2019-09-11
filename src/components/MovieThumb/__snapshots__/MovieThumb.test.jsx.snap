@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieThumb renders correctly 1`] = `
+<Link
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }
+  to="/film/2"
+>
+  <article
+    className="wrapper"
+    data-cy="movieThumb"
+  >
+    <img
+      alt="Poster of Kill Bill: Vol. 1"
+      className="poster"
+      src="https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg"
+    />
+    <div
+      className="titleWrapper"
+    >
+      <h2
+        className="title"
+      >
+        Kill Bill: Vol. 1
+      </h2>
+      <time
+        className="releaseDate"
+      >
+        2003
+      </time>
+    </div>
+    <p
+      className="genre"
+    >
+      Action & Adventure
+    </p>
+  </article>
+</Link>
+`;

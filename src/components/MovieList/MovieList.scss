@@ -1,0 +1,15 @@
+.listWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  article {
+    margin: 20px;
+  }
+}
+
+.emptyResult {
+  margin: auto;
+  font-size: 28px;
+}
+  

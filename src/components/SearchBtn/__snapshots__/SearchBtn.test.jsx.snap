@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBtn renders correctly 1`] = `
+<button
+  className="searchBtn searchBtnPrimary"
+  onClick={[Function]}
+  type="button"
+>
+  Search
+</button>
+`;

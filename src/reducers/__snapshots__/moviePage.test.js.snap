@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`moviePage reducer should handle SET_MOVIE 1`] = `
+Immutable.Record {
+  "movie": null,
+  "genres": Immutable.List [],
+  "movies": Immutable.List [],
+}
+`;
+
+exports[`moviePage reducer should return the initial state 1`] = `
+Immutable.Record {
+  "movie": null,
+  "genres": Immutable.List [],
+  "movies": Immutable.List [],
+}
+`;

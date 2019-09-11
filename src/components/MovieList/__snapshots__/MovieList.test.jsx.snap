@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieList renders *No results found* 1`] = `
+<p
+  className="emptyResult"
+>
+  No films found
+</p>
+`;
+
+exports[`MovieList renders correctly 1`] = `
+<div
+  className="listWrapper"
+>
+  <MovieThumb
+    key="680"
+    movie={
+      Immutable.Map {
+        "release_date": "1994-09-10",
+        "vote_average": 8.3,
+        "tagline": "Just because you are a character doesn't mean you have character.",
+        "genres": Immutable.List [
+          "Thriller",
+          "Crime",
+        ],
+        "poster_path": "https://image.tmdb.org/t/p/w500/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+        "title": "Pulp Fiction",
+        "runtime": 154,
+        "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+        "id": 680,
+      }
+    }
+  />
+  <MovieThumb
+    key="2"
+    movie={
+      Immutable.Map {
+        "release_date": "2003",
+        "vote_average": 4.5,
+        "tagline": "Oscar-winning Movies",
+        "genres": Immutable.List [
+          "action",
+          "adventure",
+        ],
+        "poster_path": "https://images-na.ssl-images-amazon.com/images/I/71XwrZLWOBL._SY450_.jpg",
+        "title": "Kill Bill: Vol. 1",
+        "runtime": 150,
+        "overview": "From groundbreaking writer and director Quentin Tarantino KILL BILL VOLUME 1 stars Uma Thurman, Lucy Liu, and Vivica A. Fox in an epic vendetta! Four years after taking a bullet in the head at her own wedding, The Bride emerges from a coma and decides it's time for payback! Having been gunned down by her former boss and his deadly squad of international assassins, it's a kill-or- be- killed fight.",
+        "id": 2,
+      }
+    }
+  />
+</div>
+`;

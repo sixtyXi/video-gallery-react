@@ -1,0 +1,40 @@
+@import '../../shared/_typography.scss';
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  font-size: $size-s;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.poster {
+  width: 100%;
+  height: 280px;
+}
+
+.titleWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.title {
+  font-size: inherit;
+  line-height: inherit;
+  font-variant: all-small-caps;
+}
+
+.releaseDate {
+  padding: 0 5px;
+  border: 1px solid;
+}
+
+.genre {
+  width: 100%;
+  padding: 0 5px;
+  color: gray;
+}

@@ -1,19 +1,46 @@
+// @flow
+
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import loadable from '@loadable/component';
 
-import { HelloFunc } from './components/HelloFunc/HelloFunc';
-import { HelloCreate } from './components/HelloCreate/HelloCreate';
-import { HelloPure } from './components/HelloPure/HelloPure';
-import { HelloComponent } from './components/HelloComponent/HelloComponent';
+import './App.scss';
+import { Decorator } from './containers/Decorator/Decorator';
 
-const App = () => {
+import type { Store } from './configureStore';
+import type { Location } from './shared/types';
+
+const ListMoviePage = loadable(() =>
+  import('./list-movie/ListMoviePageContainer/ListMoviePageContainer')
+);
+const MoviePage = loadable(() => import('./movie/MoviePage/MoviePage'));
+const NotFoundPage = loadable(() => import('./not-found/NotFoundPage/NotFoundPage'));
+
+type Props = {
+  Router: Function,
+  location?: Location,
+  context?: { url: string },
+  store: Store
+};
+
+const App = ({ Router, location, context, store }: Props) => {
   return (
-    <main>
-      {HelloCreate}
-      <HelloFunc />
-      <HelloPure />
-      <HelloComponent />
-    </main>
+    <Decorator store={store}>
+      <Router location={location} context={context}>
+        <Switch>
+          <Route exact path="/" component={ListMoviePage} />
+          <Route path="/search" component={ListMoviePage} />
+          <Route exact path="/film/:id" component={MoviePage} />
+          <Route path="*" component={NotFoundPage} />
+        </Switch>
+      </Router>
+    </Decorator>
   );
+};
+
+App.defaultProps = {
+  location: null,
+  context: null
 };
 
 export default App;

@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 module.exports = function(api) {
   api.cache(true);
 
@@ -14,9 +15,10 @@ module.exports = function(api) {
         useBuiltIns: 'usage'
       }
     ],
-    '@babel/preset-react'
+    '@babel/preset-react',
+    '@babel/preset-flow'
   ];
-  const plugins = [];
+  const plugins = ['@babel/plugin-proposal-class-properties', '@loadable/babel-plugin'];
 
   return {
     presets,

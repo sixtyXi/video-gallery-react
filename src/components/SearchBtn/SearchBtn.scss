@@ -1,0 +1,21 @@
+@import '../../shared/_colors.scss';
+@import '../../shared/_typography.scss';
+
+.searchBtn {
+  max-width: 125px;
+  padding: 5px 40px;
+  font-variant: all-small-caps;
+  border: none;
+  cursor: pointer;
+}
+
+.searchBtnPrimary {
+  background: $accent;
+  color: $text-light;
+}
+
+.searchBtnSecondary {
+  padding: 5px 20px;
+  background: white;
+  color: $accent;
+}
